@@ -5,22 +5,18 @@ import java.util.Scanner;
 public class Exercicio4 {
 	public static void main(String[] args) {
 
-		int num, soma = 0;
+		int num;
 		Scanner read = new Scanner(System.in);
-
-		System.out.print("Número de entrada é :");
-
+		System.out.print("Digite um numero: ");
 		num = read.nextInt();
 
-		for (int i = 0; i < num * 2; i++) {
-			if (i % 2 != 0) {
-				System.out.println(i);
-				soma += i;
+		for (int i =1; i <=num; i++) {
+			for (int j =1; j<=i; j++) {
+				System.out.print(j);	
 			}
-
+			System.out.println();
 		}
-		System.out.println("A soma dos números ímpares naturais até " + num + " é :" + soma);
-
+		
 		read.close();
 
 	}
