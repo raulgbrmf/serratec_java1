@@ -11,7 +11,10 @@ public class TestaContas {
 		Conta1.saldo = 1000;
 		Conta1.dataDeAbertura = "29/07/2020";
 		
-	
+//Numero 4: diferente pois usa parte diferente da memoria
+//Numero 5: ao criar 2 referencia para a mesma conta a resposta 
+//do if sera igual pois esta usando o mesmo espaco na memoria
+//Tinha feito os codigos porem achei que ficou poluido o scrip.
 			
 		Conta1.saca(200);
 		
