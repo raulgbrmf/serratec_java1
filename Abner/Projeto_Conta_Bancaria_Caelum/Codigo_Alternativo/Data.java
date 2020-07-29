@@ -36,9 +36,10 @@ public class Data {
 
 	public void setAno(int ano) {
 		this.ano = ano;
-	}
+	}	
 
-	public String retornaData() {
+	@Override
+	public String toString() {
 		return this.dia + "/" + this.mes + "/" + this.ano;
-	}
+	}	
 }

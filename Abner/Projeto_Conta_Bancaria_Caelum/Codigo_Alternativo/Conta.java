@@ -16,7 +16,7 @@ public class Conta {
 		this.agencia = agencia;
 		this.saldo = saldo;
 		this.dataAbertura = dataAbertura;
-	}	
+	}
 
 	public String getTitular() {
 		return titular;
@@ -36,11 +36,11 @@ public class Conta {
 
 	public Data getDataAbertura() {
 		return dataAbertura;
-	}	
+	}
 
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
-	}	
+	}
 
 	private boolean verificaSaldo(double valor) {
 
@@ -53,8 +53,8 @@ public class Conta {
 
 		if (verificaSaldo(valor))
 			this.saldo += -valor;
-		System.out.print("Saldo insuficiente!\n");
-
+		else
+			System.out.print("Saldo insuficiente!\n");
 	}
 
 	public void deposita(double valor) {
@@ -66,9 +66,10 @@ public class Conta {
 		return this.saldo * 0.1;
 	}
 
-	public String recuperaDadosImpressao() {
+	@Override
+	public String toString() {
 		return "Dados de extrado: " + "\nTitular: " + this.titular + "\nNumero c/c: " + this.numero + "\nAgencia: "
 				+ this.agencia + "\nSaldo: R$ " + this.saldo + "\nRendimento Mensal: R$ " + calculaRendimento()
-				+ "\nCliente desde: " + this.dataAbertura.retornaData();
+				+ "\nCliente desde: " + this.dataAbertura;
 	}
 }
