@@ -1,0 +1,28 @@
+
+
+
+ class Conta {
+	
+	
+		
+		private String titular;
+	    private int numero;
+	    private String agencia;
+	    private double saldo;
+	    private String datadeabertura;
+	    
+	    void saca(double valor)
+	    {
+	        saldo = saldo-valor;
+	    }
+	    void deposita(double valor)
+	    {
+	        saldo = saldo + valor;
+	    }
+	    void calcularrendimento (double valor)
+	    {
+	        System.out.println(saldo);
+	    }
+	   
+	     
+	  }        
