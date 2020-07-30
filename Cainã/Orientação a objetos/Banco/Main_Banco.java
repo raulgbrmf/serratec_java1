@@ -3,14 +3,17 @@ public class Main_Banco
 {
 	public static void main(String[] args) 
 	{
+		//Declaração da data
 		Data data = new Data();
 		data.dia = 25;
 		data.mes = 04;
 		data.ano = 2015;
 		
+		//Declaração das contas
 		Conta c1 = new Conta();
 		//Conta c2 = new Conta(); <-------- declaração da conta 2
 		
+		//Dados da 1ª conta
 		c1.titular = "Hugo";
 		c1.numeroConta = 123;
 		c1.agencia = "45678-9";
@@ -19,7 +22,8 @@ public class Main_Banco
 		
 		//c1 = c2; <------------- igualando c1 com c2
 
-		/*c2.titular = "Hugo"; <------------------------------- dados da conta 2
+		//Dados da 2ª conta
+		/*c2.titular = "Hugo";
 		c2.numeroConta = 123;
 		c2.agencia = "45678-9";
 		c2.saldo = 50;
