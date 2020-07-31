@@ -1,26 +1,20 @@
 package Java1;
 
-import java.util.Scanner;
-
 public class TrianguloDeNumerosAvancado {
 	public static void main(String[] args) {
 
-		int contador = 1;
+		escreveLinha(5);
+	}
 
-		Scanner entrada = new Scanner(System.in);
-		System.out.print("informe o número de filas: ");
-		int filas = entrada.nextInt();
-
-		while (contador <= filas) {
-			int coluna = 1;
-			while (coluna <= contador) {
-				System.out.print(coluna + coluna);
-				coluna = coluna +1;
+	public static void escreveLinha(int num) {
+		if (num <= 1) {
+			System.out.println(1);
+		} else {
+			escreveLinha(num - 1);
+			for (int i = 1; i <= num; i++) {
+				System.out.print(num * i + " ");
 			}
-			System.out.print(" ");
-			contador = contador + 1;
 			System.out.println();
 		}
-		entrada.close();
 	}
 }
