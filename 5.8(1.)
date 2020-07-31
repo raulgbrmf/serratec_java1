@@ -1,6 +1,3 @@
-
-
-
  class Conta {
 	
 	
@@ -26,3 +23,5 @@
 	   
 	     
 	  }        
+	  //testar o que acontece quando tento acessar um 
+	  //um atributo privado
