@@ -1,4 +1,4 @@
-
+//Muito lento
 public class DesafioFibonacci {
 	
 	public static long fibonacci (int valor) {
