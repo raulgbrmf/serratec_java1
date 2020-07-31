@@ -6,18 +6,28 @@ public class Conta {
 	private String agencia;
 	private String titular;
 	private double saldo;
+	private static Double taxa = 0.1;
+	private static int totalDeContas;
 
-	Data data_abertura;
+	private Data data_abertura;
 
-	public Conta(int numero, String agencia, String titular, double saldo, Data data_abertura) {
+	public Conta(int numero, String agencia, String titular, double saldo,Data data_abertura) {
 		this.numero = numero;
 		this.agencia = agencia;
 		this.titular = titular;
 		this.saldo = saldo;
-		this.data_abertura = data_abertura;
+		
+	    try {
+			this.setData_abertura(data_abertura);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		totalDeContas += 1;
 	}
 
 	boolean saca(double valor) {
+
 		if (this.saldo >= valor) {
 			this.saldo = this.saldo - valor;
 			return true;
@@ -28,6 +38,7 @@ public class Conta {
 	}
 
 	boolean transfere(Conta destino, double valor) {
+
 		if (this.saca(valor)) {
 			destino.deposita(valor);
 			return true;
@@ -37,8 +48,53 @@ public class Conta {
 
 	}
 
-	void deposita(double quantia) {
-		this.saldo = this.saldo + quantia;
+	boolean deposita(double quantia) {
+		if (quantia > 0) {
+			this.saldo = this.saldo + quantia;
+			return true;
+
+		} else {
+			return false;
+		}
+	}
+
+	public static Double getTaxa() {
+		return taxa;
+	}
+
+	public static int getTotalDeContas() {
+		return totalDeContas;
+	}
+
+	public static void setTaxa(Double taxa) {
+		Conta.taxa = taxa;
+	}
+
+	public Data getData_abertura() {
+		return data_abertura;
+	}
+
+	public void setData_abertura(Data data_abertura) throws Exception {
+		
+		if (data_abertura.isValid()) {
+			
+			this.data_abertura = data_abertura;
+		}
+		else {
+			throw new Exception("Data "+ data_abertura.imprimeData()+ " invalida para a conta do titular "+ this.titular);
+		}
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
+	}
+
+	public void setTitular(String titular) {
+		this.titular = titular;
 	}
 
 	String recuperaDadosImpressao() {
@@ -48,7 +104,7 @@ public class Conta {
 	}
 
 	double calculaRendimento() {
-		return this.saldo * 0.1;
+		return this.saldo * taxa;
 	}
 
 	public int getNumero() {
