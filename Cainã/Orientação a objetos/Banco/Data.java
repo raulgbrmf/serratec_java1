@@ -1,7 +1,13 @@
-
-public class Data 
+public class Data
 {
-	int ano, mes, dia;
+	private int dia, mes, ano;
+	
+	public Data(int dia, int mes, int ano)
+	{
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+	}
 	
 	public String retornaData()
 	{

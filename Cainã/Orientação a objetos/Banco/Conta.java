@@ -1,53 +1,61 @@
-
-public class Conta 
+public class Conta
 {
-	int numeroConta;
-	String titular;
-	String agencia;
-	Data dataAbertura;
-	double saldo;
+	private int identificador; //Não precisa de setter nem getter
+	private int numConta;
+	private String titular;
+	private double saldo;
+	private String agencia;
+	private Data dataAbertura;
 	
+	public void setSaldo(double saldo)
+	{
+		this.saldo = saldo;
+	}	
+	
+	Conta(String nome, int num, String agencia, Data data, int id)
+	{
+		this.numConta = num;
+		this.titular = nome;
+		this.agencia = agencia;
+		this.dataAbertura = data;
+		this.saldo = 0;
+		this.identificador = id;
+	}
+
 	public void saca(double valorSaque)
 	{
-		if(valorSaque <= this.saldo)
+		if(this.saldo >= valorSaque)
 		{
-			this.saldo += - valorSaque;
+			double novoSaldo = this.saldo - valorSaque;
+			this.saldo = novoSaldo;
 		}
 		else
 		{
-			System.out.print("Não é possível sacar esse valor dessa conta.");
+			System.out.print("Não é possível sacar esse valor nessa conta.");
 		}
 	}
 	
 	public void deposita(double valorDeposito)
 	{
-		this.saldo += valorDeposito;
+		double novoSaldo = this.saldo + valorDeposito;
+		this.saldo = novoSaldo;
 	}
 	
 	public double calculaRendimento()
 	{
-		if(this.saldo != 0)
-		{
-			return this.saldo * 0.1;
-		}
-		else
-		{
-			System.out.print("Essa conta não possui saldo.");
-			return 0;
-		}
+		double rendimento = this.saldo * 0.1;
+		return rendimento;
 	}
-
-	public String recuperaDadosParaImpressao() 
+	
+	public void imprimeInformacoes()
 	{
-		String dados = "Titular: " + this.titular;
-		dados += "\nNúmero da conta: " + this.numeroConta;
-		dados += "\nAgência: " + this.agencia;
-		dados += "\nData de abertura: " + this.dataAbertura.retornaData();
-		dados += "\nSaldo atual: " + this.saldo;
-		dados += "\nRendimento mensal: " + calculaRendimento();
-		
-		return dados;
+		System.out.println("Titular da conta: " + this.titular);
+		System.out.println("Número da conta: " + this.numConta);
+		System.out.println("Identificador da conta" + this.identificador);
+		System.out.println("Agência: " + agencia);
+		System.out.println("Data de Abertura: " + dataAbertura.retornaData());
+		System.out.println("Saldo atual: " + this.saldo);
+		System.out.println("Rendimento mensal: " + calculaRendimento());
+		System.out.println();
 	}
-	
-	
 }

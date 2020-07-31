@@ -1,48 +1,34 @@
-
-public class Main_Banco 
+public class Main_Banco
 {
-	public static void main(String[] args) 
-	{
-		//Declaração da data
-		Data data = new Data();
-		data.dia = 25;
-		data.mes = 04;
-		data.ano = 2015;
+	public static void main(String[] args)
+	{		
+		Data dataConta1 = new Data(20, 06, 2015);
+		Data dataConta2 = new Data(15, 02, 2018);
 		
-		//Declaração das contas
-		Conta c1 = new Conta();
-		//Conta c2 = new Conta(); <-------- declaração da conta 2
-		
-		//Dados da 1ª conta
-		c1.titular = "Hugo";
-		c1.numeroConta = 123;
-		c1.agencia = "45678-9";
-		c1.saldo = 50;
-		c1.dataAbertura = data;
-		
-		//c1 = c2; <------------- igualando c1 com c2
+		Conta conta1 = new Conta("Cainã", 123, "45678-9", dataConta1, 1);
+		Conta conta2 = new Conta("Gabrielle", 321, "98765-4", dataConta2, 2);
 
-		//Dados da 2ª conta
-		/*c2.titular = "Hugo";
-		c2.numeroConta = 123;
-		c2.agencia = "45678-9";
-		c2.saldo = 50;
-		c2.dataAbertura = "25/04/2015";
+		conta1.setSaldo(5000);
+		conta2.setSaldo(8000);
 		
-		if(c1 == c2) <----------------------- if da questão 4
+		conta1.saca(2000);
+		conta1.deposita(5000);
+		
+		conta2.deposita(12000);
+		
+		conta1.imprimeInformacoes();
+		conta2.imprimeInformacoes();
+		
+		//Questão 4 e 5
+		/*Conta conta3 = new Conta("Cainã", 123, "45678-9", dataConta1);
+		if(conta1 == conta3)
 		{
-			System.out.print("Iguais");
+			System.out.println("Iguais");
 		}
 		else
 		{
-			System.out.print("Diferentes");
+			System.out.println("Diferente");
 		}*/
 		
-		System.out.println(c1.recuperaDadosParaImpressao());
-		
-		c1.deposita(100);
-		c1.saca(75);
-		
-		System.out.println("\n" + c1.recuperaDadosParaImpressao());
 	}
 }
