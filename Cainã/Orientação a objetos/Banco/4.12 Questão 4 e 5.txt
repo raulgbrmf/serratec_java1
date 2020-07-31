@@ -1,3 +1,7 @@
 Percebi que o programa olha pro objeto, e não para os valores nele implementados. Na questão 4, quando comparamos as duas contas com valor igual, elas continuam
 sendo contas diferentes, então a resposta é "Diferente". Já na questão 5, quando fizemos "c1 = c2", as contas agora retornam "Igual".
 
+----Acrescentando com novo aprendizado------
+
+c1 e c2 não são objetos, e sim referências a objetos. Se igualarmos c1 e c2, ambos faram referência a um mesmo objeto.
+
