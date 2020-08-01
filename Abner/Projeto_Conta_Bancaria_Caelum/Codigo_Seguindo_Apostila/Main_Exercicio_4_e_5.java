@@ -1,5 +1,5 @@
 
-public class Main_Exercicio_4_e_5 {
+/*public class Main_Exercicio_4_e_5 {
 
 	public static void main(String[] args) {
 		
@@ -32,4 +32,4 @@ public class Main_Exercicio_4_e_5 {
 
 	}
 
-}
+}*/

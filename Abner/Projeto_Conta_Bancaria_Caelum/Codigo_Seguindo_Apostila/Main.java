@@ -2,21 +2,23 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Data d1 = new Data();
-		d1.dia = 20;
-		d1.mes = 10;
-		d1.ano = 2019;		
+		Data d1 = new Data(11,02,2020);
+		System.out.println(d1.getRetornarData());	
 		
-		Conta c1 = new Conta();		
-		c1.titular = "Hugo";
-		c1.numero = 123;
-		c1.agencia = "45678-9";
-		c1.saldo = 50.0;
-		c1.dataAbertura = d1;	
-		c1.deposita(200);
-		c1.saca(20.00);
+		Pessoa_Fisica pf = new Pessoa_Fisica("256566548569");
+		System.out.println(pf.getCpf());
 		
-		System.out.println(c1.recuperaDadosImpressao() + "\n");		
+		Conta c1 = new Conta("Joao");		
+		Conta c2 = new Conta();	
+		System.out.println(c1.getId());
+		System.out.println(c2.getId());
+		
+		
+		
+		/*c1.deposita(100);
+		  c1.saca(20.00);
+		
+		System.out.println(c1.recuperaDadosImpressao() + "\n");*/		
 		
 	}
 }
