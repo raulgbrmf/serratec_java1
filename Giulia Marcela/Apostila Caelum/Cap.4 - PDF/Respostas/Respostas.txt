@@ -1,0 +1,21 @@
+Exercício 4.  E se eles tiverem o mesmos atributos? 
+
+Mesmo tendo os mesmos atributos. A referência deles são diferentes, sendo assim, tendo endereços diferentes. 
+Fazendo com que retorne no if = Diferentes. 
+
+Exercício 5. O que acontece com o if do exercício anterior?
+
+Ao criarmos uma referência "user" para um novo objeto do tipo conta. Estaremos salvando na memória uma posição para guardar os dados referentes a user. 
+
+Conta user = new Conta(); // Reserva um espaço na memória para essa referência (user)
+
+Então, quando dizemos: 
+
+user1 = user ;  // user1 passa a olhar para o mesmo objeto que user. 
+
+Ao usarmos o sinal "=" estamos copiando o valor dela. Nesse caso, a referência dela na memória.  Por mais que user e user1 sejam diferentes em seus atributos. Eles retornarão iguais.
+
+Exercício 7.  O que acontece se chamarmos o método recuperaDadosParaImpressao antes de atribuirmos uma data para esta Conta? 
+
+Retorna o valor padrão.. 000 
+

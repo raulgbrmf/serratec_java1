@@ -1,0 +1,11 @@
+Exercício 1. Tente criar uma Conta no main e modificar ou ler um de seus atributos privados. O que acontece?
+
+Não se torna possível fazer a modificação ou até mesmo ler o atributo na Main. 
+
+Exercício 4. Por que você precisa do construtor sem argumentos para que a passagem do nome seja opcional? 
+
+É necessário porque retira a obrigatoriedade de preencher o titular na hora de criar o objeto. 
+
+Exercício 5. Crie um getter para o identificador. Devemos ter um setter? 
+
+Não, pois.. como deve-se ter um valor único para cada conta instanciada. Não há necessidade de modificação. 
