@@ -51,7 +51,7 @@ public class Conta
 	{
 		System.out.println("Titular da conta: " + this.titular);
 		System.out.println("Número da conta: " + this.numConta);
-		System.out.println("Identificador da conta" + this.identificador);
+		System.out.println("Identificador da conta: " + this.identificador);
 		System.out.println("Agência: " + agencia);
 		System.out.println("Data de Abertura: " + dataAbertura.retornaData());
 		System.out.println("Saldo atual: " + this.saldo);
