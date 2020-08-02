@@ -1,16 +1,20 @@
-package conta_bancaria;
+package banco.conta;
 
-public class Conta {
+import banco.administrativo.abstracoes.Pessoa;
+import banco.utils.Data;
+
+public abstract class Conta {
 
 	private int numero;
 	private String agencia;
-	private String titular;
+	private Pessoa titular;
 	private double saldo;
+	protected String tipo;
 	private static int totalDeContas;
 
 	private Data data_abertura;
 
-	public Conta(int numero, String agencia, String titular, double saldo, Data data_abertura) {
+	public Conta(int numero, String agencia, Pessoa titular, double saldo, Data data_abertura) {
 		this.numero = numero;
 		this.agencia = agencia;
 		this.titular = titular;
@@ -24,9 +28,9 @@ public class Conta {
 
 		totalDeContas += 1;
 	}
-	
-	Conta(){
-		
+
+	Conta() {
+
 	}
 
 	boolean saca(double valor) {
@@ -61,7 +65,6 @@ public class Conta {
 		}
 	}
 
-
 	public static int getTotalDeContas() {
 		return totalDeContas;
 	}
@@ -89,14 +92,15 @@ public class Conta {
 		this.agencia = agencia;
 	}
 
-	public void setTitular(String titular) {
+	public void setTitular(Pessoa titular) {
 		this.titular = titular;
 	}
 
-	String recuperaDadosImpressao() {
-		return "Nome do Titular: " + this.titular + "\nAgência: " + this.agencia + "\nNúmero da Conta: " + this.numero
-				+ "\nSaldo Atual: R$" + this.saldo + "\nRendimento Mensal: R$" + calculaRendimento()
-				+ "\nData de Abertura: " + this.data_abertura.imprimeData();
+	public String recuperaDadosImpressao() {
+		return "Dados do Titular\n" + this.titular.imprimeDados() + "\nTipo da conta: " + this.tipo + "\nAgência: "
+				+ this.agencia + "\nNúmero da Conta: " + this.numero + "\nSaldo Atual: R$" + this.saldo
+				+ "\nRendimento Mensal: R$" + calculaRendimento() + "\nData de Abertura: "
+				+ this.data_abertura.imprimeData();
 	}
 
 	double calculaRendimento() {
@@ -111,12 +115,15 @@ public class Conta {
 		return agencia;
 	}
 
-	public String getTitular() {
+	public Pessoa getTitular() {
 		return titular;
 	}
 
 	public double getSaldo() {
 		return saldo;
 	}
+
+	public abstract String getTipo();
+	
 
 }

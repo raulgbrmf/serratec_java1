@@ -1,20 +1,24 @@
-package conta_bancaria;
+package banco.conta;
+
+import banco.administrativo.abstracoes.Pessoa;
+import banco.utils.Data;
 
 public class ContaCorrente extends Conta {
 
 	private double limiteEmprestimo;
-	
+
 	public ContaCorrente() {
 		super();
 	}
 
-	public ContaCorrente(int numero, String agencia, String titular, double saldo, Data data_abertura,
+	public ContaCorrente(int numero, String agencia, Pessoa titular, double saldo, Data data_abertura,
 			double limiteEmprestimo) {
+
 		super(numero, agencia, titular, saldo, data_abertura);
+		this.tipo = "Corrente";
 		this.setLimiteEmprestimo(limiteEmprestimo);
 
 	}
-
 	public boolean realizaEmprestimo(double valor) {
 
 		if (this.limiteEmprestimo >= valor) {
@@ -34,4 +38,8 @@ public class ContaCorrente extends Conta {
 		this.limiteEmprestimo = limiteEmprestimo;
 	}
 
+	@Override
+	public String getTipo() {
+		return this.tipo;
+	}
 }

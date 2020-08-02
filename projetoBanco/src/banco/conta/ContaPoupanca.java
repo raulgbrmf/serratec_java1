@@ -1,4 +1,7 @@
-package conta_bancaria;
+package banco.conta;
+
+import banco.administrativo.abstracoes.Pessoa;
+import banco.utils.Data;
 
 public class ContaPoupanca extends Conta {
 
@@ -8,9 +11,9 @@ public class ContaPoupanca extends Conta {
 		super();
 	}
 
-	public ContaPoupanca(int numero, String agencia, String titular, double saldo, Data data_abertura,double taxa) {
+	public ContaPoupanca(int numero, String agencia, Pessoa titular, double saldo, Data data_abertura,double taxa) {
 		super(numero, agencia, titular, saldo, data_abertura);
-		
+		this.tipo = "Poupança";
 		this.setTaxa(taxa);
 	}
 
@@ -19,14 +22,17 @@ public class ContaPoupanca extends Conta {
 		return getSaldo() * taxa;
 	}
 	
-
-
 	public double getTaxa() {
 		return taxa;
 	}
 
 	public void setTaxa(double taxa) {
 		this.taxa = taxa;
+	}
+
+	@Override
+	public String getTipo() {
+		return this.tipo;
 	}
 
 }

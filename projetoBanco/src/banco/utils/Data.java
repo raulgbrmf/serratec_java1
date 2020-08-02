@@ -1,4 +1,4 @@
-package conta_bancaria;
+package banco.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,14 +10,14 @@ public class Data {
 	private int mes;
 	private int ano;
 
-	Data(int dia, int mes, int ano) {
+	public Data(int dia, int mes, int ano) {
 		this.setDia(dia);
 		this.setMes(mes);
 		this.setAno(ano);
 
 	}
 
-	String imprimeData() {
+	public String imprimeData() {
 		return dia + "/" + mes + "/" + ano; // -> QUESTÃO 9
 	}
 
