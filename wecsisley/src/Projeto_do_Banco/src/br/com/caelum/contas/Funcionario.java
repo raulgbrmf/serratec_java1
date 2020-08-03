@@ -1,12 +1,12 @@
-package Projeto_Banco;
+package br.com.caelum.contas;
 
 public class Funcionario {
 
-	protected String nome;
-	protected String cpf;
+	public String nome;
+	public String cpf;
 	final double salario = 1000;
 
-	Funcionario(String nome) {
+	public Funcionario(String nome) {
 		this.nome = nome;
 	}
 
@@ -19,7 +19,7 @@ public class Funcionario {
 		System.out.printf("%.2f%n", (this.salario + getBonificacao()));
 	}
 
-	void consultaBonificacao() {
+	public void consultaBonificacao() {
 		System.out.printf("Bonificação " + this.nome + ": %.2f%n", this.getBonificacao());
 	}
 }

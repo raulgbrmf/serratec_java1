@@ -1,0 +1,30 @@
+O que um banco tem ? 
+
+Contas 
+Clientes 
+Funcionarios
+
+O que Contas tem ?
+
+Numero
+Agencia
+Saldo
+Titular
+DataDeAbertura
+
+Cliente tem ? 
+
+Nome
+SobreNome
+CPF
+Idade
+DataNascimento
+
+O que funcionario tem ? 
+
+Nome
+SobreNome
+CPF
+DataNascimento
+Idade
+Cargo

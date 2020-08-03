@@ -1,15 +1,15 @@
-package Projeto_Banco;
+package br.com.caelum.contas;
 
 public class Conta {
 
-	int numero;
-	final int agencia = 101;
-	String titular;
-	String dataAbertura;
-	double saldo;
-	final double TAXA = 0.0025;
+	public int numero;
+	public final int agencia = 101;
+	public String titular;
+	public String dataAbertura;
+	public double saldo;
+	public final double TAXA = 0.0025;
 
-	void saca(double valor) {
+	public void saca(double valor) {
 		if (this.saldo < valor) {
 			System.out.printf("\nSaldo insuficiente para realizar o saque" + "\nSeu saldo atual é de: R$ %.2f%n",
 					this.saldo);
@@ -19,7 +19,7 @@ public class Conta {
 		}
 	}
 
-	void deposita(double quantidade) {
+	public void deposita(double quantidade) {
 		this.saldo += quantidade;
 	}
 
@@ -34,7 +34,7 @@ public class Conta {
 		}
 	}
 
-	void rendimentoMensal() {
+	public void rendimentoMensal() {
 		double saldoAtual = this.saldo;
 		if (saldoAtual > 0) {
 			this.saldo = this.saldo * TAXA + this.saldo;
@@ -44,11 +44,11 @@ public class Conta {
 		}
 	}
 
-	void consultaSaldo() {
+	public void consultaSaldo() {
 		System.out.printf("Saldo Atual de " + this.titular + ": R$ %.2f%n", this.saldo);
 	}
 
-	void recuperaDados() {
+	public void recuperaDados() {
 		System.out.println("\n\nDados da conta recuperados: ");
 		System.out.print("\nTítular da conta: " + this.titular);
 		System.out.print("\nNúmero da conta: " + this.numero);

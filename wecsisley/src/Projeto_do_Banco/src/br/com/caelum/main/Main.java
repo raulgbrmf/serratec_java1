@@ -1,5 +1,10 @@
-package Projeto_Banco;
+package br.com.caelum.main;
 
+import br.com.caelum.contas.Cliente;
+import br.com.caelum.contas.Conta;
+import br.com.caelum.contas.Funcionario;
+import br.com.caelum.contas.Gerente;
+import br.com.caelum.util.ControleBonificacoes;
 
 public class Main {
 	public static void main(String[] args) {

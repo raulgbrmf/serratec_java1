@@ -1,4 +1,6 @@
-package Projeto_Banco;
+package br.com.caelum.util;
+
+import br.com.caelum.contas.Funcionario;
 
 public class ControleBonificacoes {
 	private double totalDeBonificacoes = 0;
@@ -11,7 +13,7 @@ public class ControleBonificacoes {
 		return this.totalDeBonificacoes;
 	}
 
-	void consultaTotalBonicacao() {
+	public void consultaTotalBonicacao() {
 		System.out.printf("Total pago em bonificações: R$ %.2f%n", getTotalDeBonificacoes());
 	}
 }
