@@ -1,0 +1,19 @@
+
+			 
+public class Conta {
+	
+
+	 int numero;
+	private String titular;
+	private double saldo;
+	
+	Conta() { // Construtor pode ficar vazio
+		
+		
+	}
+	
+	Conta(String titular){ // construtor pode receber uma string
+		this.titular = titular;
+	}
+}
+
