@@ -1,0 +1,31 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+
+
+		
+	 Conta minhaconta = new Conta("Nicholas");
+	 
+	 Conta maisumaconta = new Conta("Diguinho");
+	 
+	 maisumaconta.deposita(1562.99);
+	 maisumaconta.numero = 10;
+	
+	 
+	 double meuSaldo = maisumaconta.getSaldo();
+	 System.out.println("saldo do Diguinho é " + meuSaldo + "R$ \n");
+	 
+	 
+	 minhaconta.numero = 20;
+	 minhaconta.deposita(200.53);
+	 
+	 double meuSAlDO = minhaconta.getSaldo();
+	 System.out.println("saldo do Nick  é " + meuSAlDO + "R$");
+			 
+			 
+
+	}
+
+}
+
