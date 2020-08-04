@@ -1,4 +1,7 @@
-package Banco;
+package br.com.caelum.contas.modelo;
+
+import br.com.caelum.banco.util.Data;
+import br.com.caelum.usuario.PessoaFisica;
 
 public class Conta {
 
@@ -19,15 +22,15 @@ public class Conta {
 		}
 	}
 
-	Conta (){
+	public Conta (){
 		
 	}
 
-	Conta(String titular){
+	public Conta(String titular){
 		this.titular = titular;
 	}
 	
-	boolean saca(double valor) {
+	public boolean saca(double valor) {
 		if (this.saldo >= valor) {
 			this.saldo = this.saldo - valor;
 			return true;
@@ -37,7 +40,7 @@ public class Conta {
 
 	}
 
-	void deposita(double valor) {
+	public void deposita(double valor) {
 		this.saldo = this.saldo + valor; // ---- Exercicios cap.4 num 1 e 2*/
 	}
 

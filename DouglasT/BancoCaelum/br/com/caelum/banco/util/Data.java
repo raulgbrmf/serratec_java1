@@ -1,4 +1,4 @@
-package Banco;
+package br.com.caelum.banco.util;
 
 public class Data {
 

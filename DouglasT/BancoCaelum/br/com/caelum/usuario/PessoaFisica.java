@@ -1,4 +1,4 @@
-package Banco;
+package br.com.caelum.usuario;
 
 public class PessoaFisica {
 
