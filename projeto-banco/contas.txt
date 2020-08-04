@@ -1,0 +1,4 @@
+Conta Corrente,123,45675-9,Renato Viana,1049.9
+Conta Corrente,456,78456-2,Ana Aguiar,2200.0
+Conta Poupança,587,45675-9,Renato Viana,10000.0
+Conta Corrente,963,47851-8,Bruna Rocha,0.0
