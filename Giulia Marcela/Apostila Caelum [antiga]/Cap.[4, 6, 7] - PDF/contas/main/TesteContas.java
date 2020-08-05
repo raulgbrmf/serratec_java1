@@ -11,7 +11,7 @@ public class TesteContas {
 
 		Conta conta = new Conta ();
 		Cliente cliente = new Cliente();
-		conta.titular = cliente;
+		conta.setTitular(cliente); 
 		
 		//Exercise 4 - Cap.7 
 		Conta c = new Conta();

@@ -8,7 +8,7 @@ public class TestaLimite {
 
 		Conta conta = new Conta();
 		conta.getSaldo();
-		conta.limite = 1000.0;
+		conta.setLimite(1000.0);
 		conta.saque(50000);
 
 	}

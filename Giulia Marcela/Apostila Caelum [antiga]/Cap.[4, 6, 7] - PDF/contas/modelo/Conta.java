@@ -1,17 +1,18 @@
 package br.com.g2ac.contas.modelo;
 
 public class Conta {
-	public int numero;
-	public Cliente titular = new Cliente();
+	
+	//private int numero;
+	private Cliente titular = new Cliente();
 	protected double saldo;
-	public double limite;
+	private double limite;
 
 	public Conta() {
 
 	}
 
 	public Conta(String nome) {
-		this.titular.nome = nome;
+		this.getTitular().setNome(nome);
 	}
 
 	public double getSaldo() {
@@ -49,6 +50,22 @@ public class Conta {
 
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
+	}
+
+	public double getLimite() {
+		return limite;
+	}
+
+	public void setLimite(double limite) {
+		this.limite = limite;
+	}
+
+	public Cliente getTitular() {
+		return titular;
+	}
+
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
 	}
 
 	
