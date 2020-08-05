@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.caelum.javafx.api.controllers.TelaInicialController">
+   <children>
+      <TabPane layoutX="57.0" layoutY="28.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Contas">
+               <content>
+                  <VBox>
+                     <children>
+                        <TableView fx:id="listaContas">
+                          <columns>
+                            <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" resizable="false" text="Titular">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="titular" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" resizable="false" text="Número">
+                               	<cellValueFactory>
+                            		<PropertyValueFactory property="numero" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" resizable="false" text="Agência">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="agencia" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" resizable="false" text="Saldo">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="saldo" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="-1.0" resizable="false" text="Tipo">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="tipo" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#criaConta" text="Nova Conta" />
+                              <Button layoutX="10.0" layoutY="10.0" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#salvaDados" text="Salvar Dados">
+                                 <HBox.margin>
+                                    <Insets left="16.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="16.0" top="16.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab text="Seguros de Vida">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TableView fx:id="listaSeguros">
+                          <columns>
+                            <TableColumn editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="-1.0" resizable="false" text="Titular">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="titular" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="-1.0" resizable="false" text="N° da Apólice">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="numeroApolice" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="-1.0" resizable="false" text="Valor">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="valor" />
+                                </cellValueFactory>
+                            </TableColumn>
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#criaSeguro" text="Novo Seguro de Vida" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="16.0" top="16.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+            <Tab text="Relatório">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TableView fx:id="listaProdutos">
+                          <columns>
+                            <TableColumn editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="-1.0" text="Produto" >
+                            	<cellValueFactory>
+                                    <PropertyValueFactory property="tipo" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="-1.0" text="Titular" >
+                            	<cellValueFactory>
+                                    <PropertyValueFactory property="titular" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn editable="false" maxWidth="200.0" minWidth="200.0" prefWidth="-1.0" text="Valor do Imposto" >
+                            	<cellValueFactory>
+                                    <PropertyValueFactory property="valorImposto" />
+                                </cellValueFactory>
+                            </TableColumn>
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#calculaImpostos" text="Calcular Impostos" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="16.0" top="16.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
