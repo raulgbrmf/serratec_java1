@@ -2,10 +2,10 @@ package usuario;
 
 import interfaces.Autenticavel;
 
-public class Gerente extends Funcionario implements Autenticavel {
+public class Diretor extends Funcionario implements Autenticavel {
 	
-	private int senha = 222;	
-
+	private int senha = 111;
+	
 	public boolean autentica(int senha) {
 		if (this.senha == senha) {
 			System.out.println("Acesso Permitido!");
@@ -15,14 +15,4 @@ public class Gerente extends Funcionario implements Autenticavel {
 			return false;
 		}
 	}	
-
-	public void setSenha(int senha) {
-		this.senha = senha;
-	}
-
-	@Override
-	public double getBonificacao() {
-		return super.getBonificacao() + 1000;
-	}
-
 }
