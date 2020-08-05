@@ -1,0 +1,14 @@
+insert into endereco_usuario (cep, rua, numero, bairro, cidade, estado, usuario_id)
+values ('25675-160', 'Rua Bataillard','1179', 'Mosela', 'Petrópolis', 'RJ','7');
+
+insert into endereco_usuario (cep, rua, numero, bairro, cidade, estado, usuario_id)
+values ('25678-132', 'Rua das Flores','123', 'Centro', 'Petrópolis', 'RJ','8');
+
+insert into endereco_usuario (cep, rua, numero, bairro, cidade, estado, usuario_id)
+values ('25645-705', 'Rua Pedras Brancas','179', 'Mosela', 'Petrópolis', 'RJ','9');
+
+insert into endereco_usuario (cep, rua, numero, bairro, cidade, estado, usuario_id)
+values ('23478-465', 'Rua Jazueiro','175', 'Quitandinha', 'Petrópolis', 'RJ','10');
+
+insert into endereco_usuario (cep, rua, numero, bairro, cidade, estado, usuario_id)
+values ('25987-123', 'Rua Central','263', 'Bingen', 'Petrópolis', 'RJ','11')

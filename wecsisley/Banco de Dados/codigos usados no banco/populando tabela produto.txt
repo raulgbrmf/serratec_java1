@@ -1,0 +1,14 @@
+insert into produto (nome_vend, valor_unit, data_fabric, desc_prod, qtd_prod, usuario_id, classe_id)
+values ('Wecsisley Jesus', '4.95', '25/05/2020', 'Leite Integral', '100', '7', '1');
+
+insert into produto (nome_vend, valor_unit, data_fabric, desc_prod, qtd_prod, usuario_id, classe_id)
+values ('Fabiene Avilla', '6.99', '25/06/2020', 'Coca Cola 2 litros', '100', '8', '2');
+
+insert into produto (nome_vend, valor_unit, data_fabric, desc_prod, qtd_prod, usuario_id, classe_id)
+values ('Thayná Oliveira', '4.99', '21/05/2019', 'Papel Toalha', '100', '9', '4');
+
+insert into produto (nome_vend, valor_unit, data_fabric, desc_prod, qtd_prod, usuario_id, classe_id)
+values ('Douglas Tinoco', '999.99', '25/05/2020', 'Celular Motorola', '100', '10', '3');
+
+insert into produto (nome_vend, valor_unit, data_fabric, desc_prod, qtd_prod, usuario_id, classe_id)
+values ('Mariana Cohen', '10.00', '25/05/2020', 'Caderno 10 matérias', '100', '11', '5');

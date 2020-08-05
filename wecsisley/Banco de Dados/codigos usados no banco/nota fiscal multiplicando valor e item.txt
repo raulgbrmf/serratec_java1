@@ -1,0 +1,12 @@
+select  nome_vend, pedido_compra.data, nome_cliente, cpf,cep, cidade, telefone, desc_prod, 
+		categoria, valor_unit, qtd_item, valor,
+		(produto.valor_unit * item.qtd_item) AS valor
+from produto, usuario, endereco_usuario, telefone_usuario, item, classe, pedido_compra
+where 		produto.nome_vend = 'Fabiene Avilla' 
+		and usuario.id = endereco_usuario.usuario_id
+		and usuario.id = telefone_usuario.usuario_id
+		and usuario.id = produto.usuario_id
+		and classe.id = produto.classe_id
+		and pedido_compra.id = item.pedido_id
+		and produto.id = item.produto_id
+		and pedido_compra.id = item.pedido_id

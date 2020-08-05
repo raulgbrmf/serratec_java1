@@ -1,0 +1,14 @@
+insert into classe (categoria)
+values ('alimentos');
+
+insert into classe (categoria)
+values ('bebidas');
+
+insert into classe (categoria)
+values ('eletrônicos');
+
+insert into classe (categoria)
+values ('descartáveis');
+
+insert into classe (categoria)
+values ('papelaria')
