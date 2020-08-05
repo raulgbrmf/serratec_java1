@@ -1,7 +1,7 @@
 package br.com.caelum.contas.tipo;
 
 import br.com.caelum.contas.util.Data;
-import br.com.caelum.contas.Cliente;
+
 
 public class Conta {
 	private int numero;
@@ -18,7 +18,7 @@ public class Conta {
 	final private double TR = 10 * (((1 + TBF) / REDUTOR) - 1);
 
 	public boolean sacar(double quantia) {
-		if (this.saldo < quantia) {
+		if (quantia <=  0 && this.saldo < quantia) {
 			return false;
 		}
 

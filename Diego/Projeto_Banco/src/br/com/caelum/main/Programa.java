@@ -11,7 +11,7 @@ public class Programa {
 		System.out.println(conta1.getTitular() + ", seu saldo atual é: R$" + conta1.getSaldo());
 
 		if (conta1.sacar(200))
-			System.out.println("Consegui sacar");
+			System.out.println("Não posso sacar um valor maior que o saldo, nem numeros negativos!");
 		else
 			System.out.println("Nao consegui sacar");
 
@@ -42,5 +42,6 @@ public class Programa {
 		conta3.setSaldo(100);
 		conta3.setAbertura(d1);
 		System.out.println(conta3.recuperaDadosParaImpressao());
+		
 	}
 }
