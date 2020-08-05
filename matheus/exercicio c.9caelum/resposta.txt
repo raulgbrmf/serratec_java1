@@ -1,0 +1,11 @@
+1)porque quanto mais generico a classe melhor para uma abstração
+
+2)a classe abstrata é utilizada como "base" para as classes filhas
+
+3)precisa utilizar o metodo abstrado nas outras classes que herdam informação.
+
+5)a abstração obriga que aconteça a reescrita
+
+6)para todas as classes que herdarem precisarem ter o metodo getTipo
+
+7) sim é possivel
