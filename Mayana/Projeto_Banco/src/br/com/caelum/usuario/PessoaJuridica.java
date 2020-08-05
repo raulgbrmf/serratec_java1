@@ -1,5 +1,5 @@
 package br.com.caelum.usuario;
 
-public class PessoaJuridica extends Pessoa {
+public class PessoaJuridica extends Cliente {
 
 }

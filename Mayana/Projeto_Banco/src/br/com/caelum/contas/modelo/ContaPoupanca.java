@@ -5,7 +5,9 @@ public class ContaPoupanca extends Conta {
 
 	@Override
 	public void saca(double valor) {
-		this.saldo -= (valor + 0.10);
+		if(this.saldo >= valor) {
+			this.saldo -= (valor + 0.10);
+		}
 
 	}
 	

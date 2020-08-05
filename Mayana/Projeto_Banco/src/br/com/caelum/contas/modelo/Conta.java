@@ -34,8 +34,7 @@ public abstract class Conta {
 	
 
 	public void saca(double valor) {
-		this.saldo -= valor;
-
+			this.saldo -= valor;		
 	}
 
 	public void transfere( double valor, Conta conta) {
@@ -119,11 +118,6 @@ public abstract class Conta {
 	}
 	
 
-	public abstract String getTipo();
-
-	
-	
-
-	
+	public abstract String getTipo();	
 
 }

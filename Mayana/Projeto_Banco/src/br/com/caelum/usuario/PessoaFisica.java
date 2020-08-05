@@ -1,6 +1,6 @@
 package br.com.caelum.usuario;
 
-public class PessoaFisica extends Pessoa {
+public class PessoaFisica extends Cliente {
 	
 	private String cpf;
 	
