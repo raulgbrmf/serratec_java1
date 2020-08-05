@@ -1,5 +1,10 @@
 package br.com.caelum.contas.modelo;
 
+/*
+ * Todas as classes, sem exceção, herdam de Object, seja direta ou indiretamente, 
+ *pois ela é a mãe, vó, bisavó, etc de qualquer classe.
+*/
+
 public abstract class Conta implements Comparable<Conta> {
 
 	private String titular;
