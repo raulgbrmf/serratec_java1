@@ -1,0 +1,56 @@
+// EXERCICIO 3 
+
+// O Exercicio 3 pedia pra executar a classe TestaContas
+// e cadastra um novo seguro de vida, eu fiz isso pela interface gráfica e deu tudo certo
+
+
+// EXERCICIO 4
+
+public class ManipuladorDeTributaveis {
+	
+	private double total;
+	
+	public void calculaImpostos(Evento evento){ // calcula o total
+		  
+		//´............................................................
+                //PARTE REFERENTE AO EXERCICIO 6
+	                     total=0;
+			  int tamanho = evento.getTamanhoDaLista("listaTributaveis");
+			  for (int i = 0; i < tamanho; i++) {
+			    Tributavel t = evento.getTributavel("listaTributaveis", i);
+			   total += t.getValorImposto();
+			  }
+			}
+	                   public double getTotal() {
+		                     return total;
+		}
+	
+}
+//...............................................................................................
+		
+		//EXERCICIO 5
+
+package br.com.caelum.contas.main;
+import br.com.caelum.javafx.api.main.SistemaBancario;
+
+public class TestaContas {
+	
+	
+
+	public static void main(String[] args) {
+			
+			SistemaBancario.mostraTela(true); // MUDEI DE FALSE PARA TRUE
+			
+
+		}
+
+	}
+
+
+
+
+
+
+
+
+
