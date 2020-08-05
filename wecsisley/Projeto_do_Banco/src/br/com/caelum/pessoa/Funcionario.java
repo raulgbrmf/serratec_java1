@@ -1,6 +1,6 @@
-package br.com.caelum.pessoal;
+package br.com.caelum.pessoa;
 
-public class Funcionario {
+public abstract class Funcionario {
 
 	protected String nome;
 	protected String cpf;
@@ -34,9 +34,7 @@ public class Funcionario {
 		return salario;
 	}
 
-	public double getBonificacao() {
-		return this.salario * 0.10;
-	}
+	public abstract double getBonificacao();
 
 	public void imprimeSalario() {
 		System.out.print("Salario " + this.nome + ": ");

@@ -1,7 +1,7 @@
 package br.com.caelum.main;
 
-import br.com.caelum.pessoal.Funcionario;
-import br.com.caelum.pessoal.Gerente;
+import br.com.caelum.pessoa.Funcionario;
+import br.com.caelum.pessoa.Gerente;
 import br.com.caelum.util.ControleBonificacoes;
 
 public class TestaGerente {
@@ -20,7 +20,7 @@ public class TestaGerente {
 		funcionario1.setSalario(5000.0);
 		controle.registra(funcionario1);
 		
-		Funcionario	funcionario2 = new Funcionario("");
+		Funcionario	funcionario2 = new Gerente("");
 		funcionario2.setSalario(1000.0);
 		controle.registra(funcionario2);
 		

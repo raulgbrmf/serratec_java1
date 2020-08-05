@@ -1,15 +1,19 @@
 package br.com.caelum.main;
 
-import br.com.caelum.contas.modelo.Conta;
+import br.com.caelum.contas.modelo.ManipuladorDeSeguroDeVidas;
+import br.com.caelum.util.SeguroDeVida;
 
 public class testaConta {
 	public static void main(String[] args) {
 		
-		Conta novaConta = new Conta();
+		ManipuladorDeSeguroDeVidas teste1 = new ManipuladorDeSeguroDeVidas();
 		
-		novaConta.criaConta();
-		novaConta.preencheConta();
-	
-		System.out.println(novaConta.consultaTipo());
+		SeguroDeVida s1 = new SeguroDeVida();
+		
+		teste1.criarSeguro();
+		
+		System.out.println(s1.getTitular());
+		System.out.println(s1.getNumeroApolice());
+		System.out.println(s1.getValor());
 	}
 }

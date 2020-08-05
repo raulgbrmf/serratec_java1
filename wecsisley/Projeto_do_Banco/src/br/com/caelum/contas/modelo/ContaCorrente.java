@@ -1,33 +1,40 @@
 package br.com.caelum.contas.modelo;
 
-import javax.swing.JOptionPane;
-
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Tributavel {
 
 	protected final String tipo = "Conta Corrente";
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	//colocar overide
+	protected double TarifaCorrente = TARIFAS + 0.10;
+	protected final double SEGURODEVIDA = 42;
+	
+	@Override
 	public String consultaTipo() {
 		return tipo;
 	}
-	
-	public void preencheConta() {
 
-		String entradaTitular = JOptionPane.showInputDialog("Informe o nome do títular: ");
-		String entradaNuemro = JOptionPane.showInputDialog("Informe o numero para a conta: ");
-		int saidaNumero = Integer.parseInt(entradaNuemro);
-		String entradaAgencia = JOptionPane.showInputDialog("Informe o numero para a agencia: ");
-		int saidaAgencia = Integer.parseInt(entradaAgencia);
+	@Override
+	public double consultaTarifas() {
+		return TarifaCorrente;
+	}
 
-		this.titular = entradaTitular;
-		this.numero = saidaNumero;
-		this.agencia = saidaAgencia;
+	@Override
+	public double cobraTarifas() {
+		this.saldo = this.saldo - TarifaCorrente;
+		return this.saldo;
+	}
 
-		System.out.println("Titular: " + this.titular + "\nNumero da conta: " + this.numero + "\nNumero Agencia: "
-				+ this.agencia + "\nTipo de conta: " + consultaTipo());
+	@Override
+	public void saca(double valor) {
+		if (this.saldo < valor) {
+			System.out.printf("\nSaldo insuficiente para realizar o saque" + "\nSeu saldo atual é de: R$ %.2f%n",
+					this.saldo + ".");
+		} else {
+			System.out.printf("\n" + this.titular + " - " + "Valor do saque: R$ %.2f%n", (valor));
+			this.saldo = this.saldo - valor - TarifaCorrente;
+		}
+	}
+
+	@Override
+	public double getValorImposto() {
+		return this.getSaldo() * 0.01;
 	}
 }

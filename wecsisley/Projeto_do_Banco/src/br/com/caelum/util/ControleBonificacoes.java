@@ -1,6 +1,6 @@
 package br.com.caelum.util;
 
-import br.com.caelum.pessoal.Funcionario;
+import br.com.caelum.pessoa.Funcionario;
 
 public class ControleBonificacoes {
 	private double totalDeBonificacoes = 0;
