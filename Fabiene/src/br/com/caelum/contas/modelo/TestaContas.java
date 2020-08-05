@@ -11,11 +11,13 @@ public class TestaContas {
 		int tipoConta;
 		int tipoOperacao;
 		int controle = 0;
+		double taxa=0.01;
 
-		Conta c = new Conta();
+		Conta c = new ContaCorrente();
 		ContaCorrente cc = new ContaCorrente();
 		ContaPoupanca cp = new ContaPoupanca();
 
+		//Dados da Conta
 		System.out.printf("Entre com o nome do titular da conta: ");
 		c.titular = ler.nextLine();
 		System.out.printf("Entre com a agência: ");
@@ -24,6 +26,7 @@ public class TestaContas {
 		c.numero = ler.nextInt();
 		System.out.println("\n");
 
+		//Seleciona tipo de Conta
 		System.out.println("---- TIPOS DE CONTA ----");
 		System.out.println("1 - Conta Corrente");
 		System.out.println("2 - Conta Poupança\n");
@@ -32,6 +35,39 @@ public class TestaContas {
 
 		while (controle == 0) {
 			if (tipoConta == 1) {
+				System.out.println("\n");
+				//Seleciona tipo de Operação para Conta Corrente
+				System.out.println("---- TIPO DE OPERAÇÃO ----");
+				System.out.println("1 - Depósito");
+				System.out.println("2 - Saque");
+				System.out.println("3 - Atualização de Valores");
+				System.out.println("4 - Sair\n");
+				System.out.printf("Entre com o número da operação desejada: ");
+				tipoOperacao = ler.nextInt();
+
+				if (tipoOperacao == 1) {
+					System.out.printf("\n" + c.titular + " Seu saldo atual é de: %.2f" , cc.getSaldo());
+					System.out.printf("\nEntre com o valor a ser depositado: ");
+					valor = ler.nextDouble();
+					cc.deposita(valor);
+					System.out.printf(c.titular + " Seu saldo atual é de: %.2f" , cc.getSaldo());
+				} else if (tipoOperacao == 2) {
+					System.out.printf("Entre com o valor a ser sacado: ");
+					valor = ler.nextDouble();
+					cc.saca(valor);
+					System.out.printf(c.titular + " Seu saldo atual é de: %.2f" , cc.getSaldo());
+				} else if (tipoOperacao == 3) {
+					cc.atualiza(taxa);
+					System.out.printf(c.titular + " Seu saldo atual é de: %.2f" , cc.getSaldo());
+				} else if (tipoOperacao == 4) {
+					System.out.println("Você saiu!");
+					controle = 5;
+				} else {
+					System.out.println("Tipo inexistente de operação!!!");
+				}
+
+			} else if (tipoConta == 2) {
+				//Seleciona tipo de Operação para Conta Poupança
 				System.out.println("\n");
 				System.out.println("---- TIPO DE OPERAÇÃO ----");
 				System.out.println("1 - Depósito");
@@ -42,50 +78,21 @@ public class TestaContas {
 				tipoOperacao = ler.nextInt();
 
 				if (tipoOperacao == 1) {
-					System.out.println("\n" + c.titular + " Seu saldo atual é de: " + cc.getSaldo());
-					System.out.printf("Entre com o valor a ser depositado: ");
-					valor = ler.nextDouble();
-					cc.deposita(valor);
-					System.out.println(c.titular + " Seu saldo atual é de: " + cc.getSaldo());
-				} else if (tipoOperacao == 2) {
-					System.out.printf("Entre com o valor a ser sacado: ");
-					valor = ler.nextDouble();
-					cc.saca(valor);
-					System.out.println(c.titular + " Seu saldo atual é de: " + cc.getSaldo());
-				} else if (tipoOperacao == 3) {
-					cc.atualiza();
-					System.out.println(c.titular + " Seu saldo atual é de: " + cc.getSaldo());
-				} else if (tipoOperacao == 4) {
-					controle = 5;
-				} else {
-					System.out.println("Tipo inexistente de operação!!!");
-				}
-
-			} else if (tipoConta == 2) {
-
-				System.out.println("---- TIPO DE OPERAÇÃO ----");
-				System.out.println("1 - Depósito");
-				System.out.println("2 - Saque");
-				System.out.println("3 - Atualização de Valores");
-				System.out.println("4 - Sair\n");
-				System.out.printf("Entre com o número da operação desejada: ");
-				tipoOperacao = ler.nextInt();
-
-				if (tipoOperacao == 1) {
-					System.out.println("\n" + c.titular + " Seu saldo atual é de: " + cp.getSaldo());
-					System.out.printf("Entre com o valor a ser depositado: ");
+					System.out.printf("\n" + c.titular + " Seu saldo atual é de: %.2f" , cp.getSaldo());
+					System.out.printf("\nEntre com o valor a ser depositado: ");
 					valor = ler.nextDouble();
 					cp.deposita(valor);
-					System.out.println(c.titular + " Seu saldo atual é de: " + cp.getSaldo());
+					System.out.printf(c.titular + " Seu saldo atual é de: %.2f" , cp.getSaldo());
 				} else if (tipoOperacao == 2) {
 					System.out.printf("Entre com o valor a ser sacado: ");
 					valor = ler.nextDouble();
 					cp.saca(valor);
-					System.out.println(c.titular + " Seu saldo atual é de: " + cp.getSaldo());
+					System.out.printf(c.titular + " Seu saldo atual é de: %.2f" , cp.getSaldo());
 				} else if (tipoOperacao == 3) {
-					cp.atualiza();
-					System.out.println(c.titular + " Seu saldo atual é de: " + cp.getSaldo());
+					cp.atualiza(taxa);
+					System.out.printf(c.titular + " Seu saldo atual é de: %.2f" , cp.getSaldo());
 				} else if (tipoOperacao == 4) {
+					System.out.println("Você saiu!");
 					controle = 5;
 				} else {
 					System.out.println("Tipo inexistente de operação!!!");
