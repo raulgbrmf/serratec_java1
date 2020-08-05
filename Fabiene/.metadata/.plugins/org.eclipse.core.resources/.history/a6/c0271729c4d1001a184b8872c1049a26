@@ -1,0 +1,58 @@
+package experimento_aula;
+
+public class Conta {
+	int numero;
+	String titular;
+	double saldo;
+	String agencia;
+	String dataAbertura;
+	
+	void saca(double quantidade) {
+		if (this.saldo>=quantidade) {
+			double novoSaldo = this.saldo - quantidade;
+			this.saldo = novoSaldo;
+			
+			System.out.println("O valor resgatado foi de "+quantidade);
+			System.out.println("Seu novo saldo é: "+this.saldo+"\n");
+		}else {
+			System.out.println("Saldo insuficiente!!!");
+		}	
+	}
+	
+	void deposita(double quantidade) {
+		double novoSaldo = this.saldo + quantidade;
+		this.saldo = novoSaldo;
+		
+		System.out.println("O valor depositado foi de "+quantidade);
+		System.out.println("Seu novo saldo é: "+this.saldo+"\n");
+	}
+	
+	void transfere(Conta destino, double valor) {
+		if(this.saldo>=valor) {
+			this.saca(valor);
+			destino.deposita(valor);
+			
+			System.out.println("O valor transferido da conta de "+this.titular+" foi de "+valor);
+			System.out.println("O saldo de "+destino.titular+" é agora de "+destino.saldo);
+		}
+	}
+	
+	double calculaRendimento() {
+		double novoSaldo = this.saldo+(this.saldo*0.1);
+		this.saldo = novoSaldo;
+		
+		return this.saldo;
+		
+		//System.out.println("Seu saldo com rendimento é de "+ this.saldo);
+	}
+	
+	String recuperaDadosParaImpressao () {
+		String dados = "Titular: "+ this.titular;
+		dados += "\nAgência: " + this.agencia;
+		dados += "\nConta: " + this.numero;
+		dados += "\nData de Abertura: "	+ this.dataAbertura;
+		dados += "\nSaldo da conta: " + this.saldo;
+		return dados;	
+		
+	}
+}
