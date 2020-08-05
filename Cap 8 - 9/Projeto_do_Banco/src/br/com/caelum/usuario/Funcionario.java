@@ -1,6 +1,6 @@
 package br.com.caelum.usuario;
 
-public class Funcionario {  //FUNCIONARIO E A SUPERCLASSE DE GERENTE OU CLASSE MAE
+public abstract class Funcionario {  //FUNCIONARIO E A SUPERCLASSE DE GERENTE OU CLASSE MAE
 	
 	protected String nome;
 	protected String cpf;
@@ -20,10 +20,17 @@ public class Funcionario {  //FUNCIONARIO E A SUPERCLASSE DE GERENTE OU CLASSE M
 		this.salario = salario;
 	}
 	
-	public double getBonificacao() {
+	/*public double getBonificacao() {
 		
 		return this.salario * 0.10; //funcionarios normais 0.10  de bonus
-	}
+	}*/
+	
+	/*public double getBonificacao() {  //CAP 10
+		
+		return this.salario * 1.2;
+	}*/
+	
+	public abstract double getBonificacao();
 	
 
 }

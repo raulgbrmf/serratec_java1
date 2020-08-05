@@ -6,6 +6,7 @@ public class ControleDeBonificacoes {
 	
 	public void registra(Funcionario funcionario) {
 		
+		System.out.println("Adicionando bonificacao do funcionario: " + funcionario); //CAP 10
 		this.totaldeBonificacoes += funcionario.getBonificacao();
 		
 	}

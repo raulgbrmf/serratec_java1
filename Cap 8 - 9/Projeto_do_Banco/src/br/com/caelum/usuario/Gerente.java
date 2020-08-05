@@ -35,7 +35,9 @@ public class Gerente extends Funcionario{  //GERENTE E SUBCLASSE DE FUNCIONARIO 
 	public double getBonificacao() {
 		//return this.salario * 0.15; //gerente 0.15 de bonus
 		//return this.salario * 0.10 + 1000; //exemplo do cap 9.3 
-		return super.getBonificacao() + 1000; //exemplo: chamando a getBonificacao do Funcionario usando "super"  - assim sempre vai herdar a getBonificacao atualizada da classe mae
+		//return super.getBonificacao() + 1000; //exemplo: chamando a getBonificacao do Funcionario usando "super"  - assim sempre vai herdar a getBonificacao atualizada da classe mae
+		
+		return this.salario * 1.4 + 1000; //CAP 10.2 - PAG  152
 	}
 
 

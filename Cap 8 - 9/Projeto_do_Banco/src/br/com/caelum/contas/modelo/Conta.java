@@ -95,6 +95,9 @@ public class Conta {
 		return "Conta";   
 	}
 	
+	//public abstract String getTipo(); //NUMERO 3 - PAG 158 - CAP 10
+	
+	
 	public void transfere(double valor, Conta conta) {
 		
 		this.saca(valor);
