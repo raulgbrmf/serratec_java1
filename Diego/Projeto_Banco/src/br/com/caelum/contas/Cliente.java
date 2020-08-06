@@ -11,12 +11,11 @@ public class Cliente implements Autenticavel {
 	private int idade;
 
 	public void mudaCPF(String cpf) {
-		if (!Util.validaCPF(cpf))
-			System.out.println("CPF inválido");
-		else {
-			System.out.println("CPF válido");
-			this.cpf = cpf;
-		}
+
+		if (this.idade <= 60)
+			Util.validaCPF(cpf);
+
+		this.cpf = cpf;
 	}
 
 	public boolean autentica(int senha) {

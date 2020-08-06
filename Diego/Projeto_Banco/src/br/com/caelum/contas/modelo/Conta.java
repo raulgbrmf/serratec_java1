@@ -1,13 +1,16 @@
-package br.com.caelum.contas.tipo;
+package br.com.caelum.contas.modelo;
 
 import br.com.caelum.contas.util.Data;
 
-
 public class Conta {
 	private int numero;
-	private double saldo;
+	protected double saldo;
+	private String agencia;
+
 	private String titular;
 	private Data abertura;
+	private double limite;
+	private static int totalDeContas;
 
 	// RENDIMENTO IMAGINARIO
 	final private double SELIC = 0.850;
@@ -17,48 +20,62 @@ public class Conta {
 	final private double REDUTOR = (A + B) * TBF;
 	final private double TR = 10 * (((1 + TBF) / REDUTOR) - 1);
 
-	public boolean sacar(double quantia) {
-		if (quantia <=  0 && this.saldo < quantia) {
-			return false;
+	public Conta() {
+		Conta.totalDeContas += 1;
+	}
+
+	public Conta(String titular) {
+		this.titular = titular;
+	}
+
+	public void sacar(double quantia) throws Exception {
+		if (quantia <= 0 || this.saldo < quantia) {
+			throw new Exception("Operacao indevida");
 		}
 
 		this.saldo -= quantia;
-		return true;
+
 	}
 
 	public void depositar(double quantia) {
-		this.saldo += quantia;
+		if (quantia > 0)
+			this.saldo += quantia;
 	}
 
-	public boolean tranferir(Conta conta, double quantia) {
-		if (!this.sacar(quantia))
-			return false;
-
+	public boolean tranferir(Conta conta, double quantia) throws Exception {
+		this.sacar(quantia);
 		this.depositar(quantia);
 		return true;
 	}
 
-	public double calculaRendimentoMensal() {
+	public double getRendimentoMensal() {
 		return this.saldo * (SELIC + TR) / 100;
 	}
 
 	public String recuperaDadosParaImpressao() {
 		StringBuilder dados = new StringBuilder();
-		
+
 		dados.append("\nTitular: " + this.titular);
 		dados.append("\nNumero: " + this.numero);
 		dados.append("\nSaldo: " + this.saldo);
 		dados.append("\nData de abertura: " + this.abertura.formataData());
-		dados.append("\nRendimento: " + this.calculaRendimentoMensal());
-		
+		dados.append("\nRendimento: " + this.getRendimentoMensal());
+
 		return dados.toString();
+	}
+
+	public static int getTotalDeContas() {
+		return Conta.totalDeContas;
+	}
+
+	public String getTipo() {
+		return "Conta";
 	}
 
 	@Override
 	public String toString() {
 
-		return "\nnumero : " + this.numero + ", titular : " + this.titular + ", saldo : " + this.saldo
-				+ ", data de abertura : " + this.abertura + ", rendimento : " + this.calculaRendimentoMensal();
+		return this.titular ;
 	}
 
 	public int getNumero() {
@@ -70,11 +87,15 @@ public class Conta {
 	}
 
 	public double getSaldo() {
-		return saldo;
+		return this.saldo + this.limite;
 	}
 
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
+	public String getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
 	}
 
 	public String getTitular() {
