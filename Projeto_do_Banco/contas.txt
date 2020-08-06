@@ -1,0 +1,5 @@
+Conta Corrente,12909,1390-90,Rafael Santana,994.9
+Conta Poupança,2090,8982-13,Natalie,0.0
+Conta Corrente,909,98989-22,Talles,0.0
+Conta Poupança,1289,19898-22,Karla,0.0
+Conta Corrente,2898,2288-29,Willy,0.0
