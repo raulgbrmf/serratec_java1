@@ -2,11 +2,23 @@ package heranca;
 
 public class Ferrari extends Carro{
 	
-	@Override //metodo ja existente na classe pai
-	public void Acelerar() {
+	Ferrari() { //CONSTRUTOR
 		
-		velocidadeAtual += 10;
+		super(350);
 		
 	}
+	
+	Ferrari(int velocidadeMaxima) {
+		
+		super(velocidadeMaxima);
+		x = 15; //PARA TESTAR A VELOCIDADE MAXIMA DA FERRARI BASTA COLOCAR O X = 200
+	}
+
+	/*@Override //metodo ja existente na classe pai
+	public void Acelerar() {
+		
+		velocidadeAtual += 15;
+		
+	}*/
 
 }

@@ -20,14 +20,15 @@ public class Main {
 		
 		System.out.println();
 		
-		Carro carro2 = new Ferrari();
+		Carro carro2 = new Ferrari(350);
 		
 		System.out.println("Ferrari");
 		
 		carro2.Acelerar();
 		System.out.println(carro2);		
 		carro2.Acelerar();
-		carro2.frear();             //FREAR!!!
+		System.out.println(carro2);		
+		carro2.Frear();               //FREAR!!!
 		System.out.println(carro2);		
 		carro2.Acelerar();
 		System.out.println(carro2);
