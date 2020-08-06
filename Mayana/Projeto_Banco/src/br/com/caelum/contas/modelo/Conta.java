@@ -13,9 +13,6 @@ public abstract class Conta {
 	private static int totalDeContas;
 	private PessoaFisica pessoa;
 	protected String tipo;
-	
-	
-	
 
 	// construtores;
 
@@ -27,35 +24,32 @@ public abstract class Conta {
 		this.totalDeContas = this.totalDeContas + 1;
 
 	}
-	
+
 	public Conta() {
-		
+
 	}
-	
 
 	public void saca(double valor) {
-			this.saldo -= valor;		
+			this.saldo -= valor;
 	}
 
-	public void transfere( double valor, Conta conta) {
+	public void transfere(double valor, Conta conta) {
 		this.saca(valor);
 		conta.deposita(valor);
 	}
 
-	
-	public boolean deposita(double quantia){
-		if (quantia > 0) {
-			this.saldo = this.saldo + quantia;
-			return true;
-		}else {
-			return false;
+	public void deposita(double valor) {
+		if (valor < 0) {
+			throw new IllegalArgumentException("Você tentou depositar um valor negativo");
+		} else {
+			this.saldo += valor;
 		}
 	}
 
 	public String recuperaDadosImpressao() {
 		return "Nome do Titular: " + this.titular + "\nAgência: " + this.agencia + "\nNúmero da Conta: " + this.numero
 				+ "\nSaldo Atual: R$" + this.saldo + "\nRendimento Mensal: R$" + calculaRendimento()
-				+ "\nData de Abertura: " + this.data_abertura.imprimeData() + "\nCPF: " + this.pessoa.getCpf() 
+				+ "\nData de Abertura: " + this.data_abertura.imprimeData() + "\nCPF: " + this.pessoa.getCpf()
 				+ "\nTipo de Conta: " + this.getTipo();
 	}
 
@@ -101,8 +95,8 @@ public abstract class Conta {
 	}
 
 	public void setData_abertura(Data data_abertura) {
-		if(data_abertura.dataValida()) {
-			this.data_abertura = data_abertura;			
+		if (data_abertura.dataValida()) {
+			this.data_abertura = data_abertura;
 		}
 	}
 
@@ -111,13 +105,12 @@ public abstract class Conta {
 	}
 
 	public void setPessoa(PessoaFisica pessoa) {
-		if(pessoa.validaCpf()) {
+		if (pessoa.validaCpf()) {
 			this.pessoa = pessoa;
 		}
-		
-	}
-	
 
-	public abstract String getTipo();	
+	}
+
+	public abstract String getTipo();
 
 }
