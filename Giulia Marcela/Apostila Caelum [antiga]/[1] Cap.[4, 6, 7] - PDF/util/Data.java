@@ -1,11 +1,11 @@
 package br.com.g2ac.util;
 
 public class Data {
-	private int dia; 
-	private int mes; 
-	private int ano; 
-	
-	public Data(int dia, int mes, int ano){
+	private int dia;
+	private int mes;
+	private int ano;
+
+	public Data(int dia, int mes, int ano) {
 		this.setDia(dia);
 		this.setMes(mes);
 		this.setAno(ano);
@@ -33,5 +33,9 @@ public class Data {
 
 	public void setAno(int ano) {
 		this.ano = ano;
+	}
+
+	public String imprimeData() {
+		return this.getDia() + "/" + this.getMes() + "/" + this.getAno();
 	}
 }

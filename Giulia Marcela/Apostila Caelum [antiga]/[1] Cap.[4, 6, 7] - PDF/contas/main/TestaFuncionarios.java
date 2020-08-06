@@ -10,10 +10,15 @@ public class TestaFuncionarios {
 		Funcionario func = new Funcionario ();
 		Data data = new Data(20,11,1998);
 			
-		func.nome = "Giulia";
+		func.setNome("Giulia");
 		func.setSalario(1000);
 		func.setDataEntrada(data);
-		func.mostra();
+		func.setDepartamento("Gerência"); 
+		func.admissao = data; 
+		func.rg = "23.999.543-8";
+		
+		
+		System.out.println(func.mostra());
 		
 	}
 }

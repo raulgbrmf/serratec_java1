@@ -2,7 +2,7 @@ package br.com.g2ac.usuario;
 
 import br.com.g2ac.util.Data;
 
-public class Funcionario {
+public abstract class Funcionario {
 
 	public String nome;
 	String cpf;
@@ -26,18 +26,17 @@ public class Funcionario {
 		this.salario = salario;
 	}
 
-	public double getBonificacao() {
-		return this.salario * 0.10;
-	}
+	public abstract double getBonificacao();/*
+											 * { //return this.salario * 0.10; }
+											 */
 
 	boolean demissao() {
 		return false;
 	}
 
 	public void mostra() {
-		System.out.println("Nome: " + this.nome + "\nSalário: " + this.salario 
-				+ "\nData: " + this.getDataEntrada().getDia() + "/"
-				+ this.getDataEntrada().getMes() + "/" + this.getDataEntrada().getAno());
+		System.out.println("Nome: " + this.nome + "\nSalário: " + this.salario + "\nData de Entrada: "
+				+ this.dataEntrada.imprimeData() + "\n" + this.getBonificacao());
 	}
 
 	public Data getDataEntrada() {

@@ -1,0 +1,21 @@
+1) Repare que a nossa classe Conta é uma excelente candidata para uma classe abstrata. Por quê? Que
+métodos seriam interessantes candidatos a serem abstratos?
+
+No nosso banco tem apenas Conta Corrente e Poupança. Então a classe Conta, ela apenas da forma ao tipo. Alguns métodos que seriam interessantes, talvez, saque e depósito. 
+
+2) Para que o código do main volte a compilar, troque o new Conta() por new ContaCorrente().
+Se agora não podemos dar new em Conta, qual é a utilidade de ter um método que recebe uma referência a
+Conta como argumento? Aliás, posso ter isso?
+
+O problema acontece apenas quando tentamos instanciar a classe. Criar referência, nós podemos. A utilidade se dá para facilitar o polimorfismo e herança dos atributos e métodos. 
+
+3) Qual é o problema com a classe ContaPoupanca?
+
+Ocorre um erro dizendo que deve ser implementado o método herdado, nesse caso, o atualiza. E as soluções apresentadas pela ide são implementar ou tornar abstract a classe ContaPoupança. 
+
+
+6) (opcional) Pra que ter o método atualiza na classe Conta se ele não faz nada? O que acontece se simplesmente apagarmos esse método da classe Conta e deixarmos o método atualiza nas filhas?
+
+Ao apagarmos, ocorre um erro. Pois, por ser uma reescrita. Ele precisa da existência desse método na classe Mãe. A IDE nos dá dois quick fix's, um deles é remover o @Override e o outro é criar o método atualiza na classe super (mãe). 
+
+
