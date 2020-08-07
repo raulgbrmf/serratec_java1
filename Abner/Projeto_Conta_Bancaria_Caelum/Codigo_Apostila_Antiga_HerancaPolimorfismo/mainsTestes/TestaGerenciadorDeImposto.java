@@ -14,7 +14,7 @@ public class TestaGerenciadorDeImposto {
 		gerenciador.adiciona(sv);
 
 		ContaCorrente cc = new ContaCorrente();
-		cc.deposita(1000);
+		//cc.deposita(1000);
 		gerenciador.adiciona(cc);
 
 		System.out.printf("%.2f", gerenciador.getTotal());
