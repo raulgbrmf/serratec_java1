@@ -1,0 +1,5 @@
+Questão 12-Se	você	precisasse	criar	uma	classe		ContaInvestimento	,	e	seu	método		saca		fosse
+complicadíssimo,	você	precisaria	alterar	a	classe		ManipuladorDeContas	?
+
+R - Não, a classe ManipuladorDeContas usa uma forma genérica para relacionar a interface e a estrutura do sistema. As modificações de saca seriam pertinentes somente a classe ContaInvestimento
+

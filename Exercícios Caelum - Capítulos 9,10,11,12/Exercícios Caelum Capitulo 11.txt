@@ -1,0 +1,7 @@
+Questão 6 - Quais	os	benefícios	de	manter	o	código	com	baixo	acoplamento?
+
+R - Podemos adicionar novas classes com diferentes métodos e ainda assim acessar um método como o getValorImposto de uma forma geral.
+
+Questão 7 - Tente	chamar	o	método		getSaldo		através	da	referência		t	,	o	que	ocorre?	Por	quê?
+
+R - no caso de System.out.println(t.getValorImposto()); estamos referenciando a um Tributavel, quando tentamos atribuir System.out.println(t.getSaldo());, o compilador não pode resolver pois Tributavel pode se referenciar tanto a ContaCorrente, que possui getSaldo, quanto a SeguroDeVida, que não possui o método getSaldo.

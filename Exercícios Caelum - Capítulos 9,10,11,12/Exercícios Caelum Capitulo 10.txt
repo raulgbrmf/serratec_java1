@@ -1,0 +1,14 @@
+Questão 5 - Existe	 outra	maneira	 de	 a	 classe		ContaPoupanca		 compilar	 se	 você	 não	 reescrever	 o
+método	abstrato?
+
+R - Apenas se ContaPoupanca também se tornar abstrata.
+
+Questão 6 - Pra	que	ter	o	método		getTipo		na	classe		Conta		se	ele	não	faz	nada?	O	que	acontece	se
+simplesmente apagarmos esse	método	da	classe		Conta		e	deixarmos	o	método		getTipo		nas	filhas?
+
+R - Para obrigar as classes filhas a terem o método getTipo. Se for removido as classes filhas compilam normalmente, porém não serão mais obrigadas a ter o método.
+
+Qustão 7 - Posso	 chamar	 um	 método	 abstrato	 de	 dentro	 de	 um	 outro	 método	 da	 própria	 classe
+abstrata?
+
+R - No exemplo dado na apostila, ele vai chamar o método equivalente em ContaCorrente ou ContaPoupanca.
