@@ -1,6 +1,7 @@
 package br.com.caelum.contas;
 
 import br.com.caelum.contas.modelo.*;
+import br.com.caelum.exception.SaldoInsuficienteException;
 import br.com.caelum.javafx.api.util.Evento;
 
 public class ManipuladorDeContas {
@@ -24,17 +25,27 @@ public class ManipuladorDeContas {
 	}
 
 	public void deposita(Evento evento) {
-		this.conta.depositar(evento.getDouble("valorOperacao"));
+		try {
+			this.conta.depositar(evento.getDouble("valorOperacao"));
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 
+	public void saca(Evento evento) {
+		double valor = evento.getDouble("valorOperacao");
 
-	public void saca(Evento evento) throws Exception {
-		 double valor = evento.getDouble("valorOperacao");
-		 this.conta.sacar(valor);
+		try {
+			this.conta.sacar(valor);
+		} catch (SaldoInsuficienteException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
-	
-	public void transfere(Evento evento) throws Exception {
-		Conta destino = (Conta)evento.getSelecionadoNoCombo("destino");
-		conta.tranferir(destino, evento.getDouble("valorTrasferencia"));
-    }
+
+	public void transfere(Evento evento) {
+		Conta destino = (Conta) evento.getSelecionadoNoCombo("destino");
+		conta.tranferir(destino, evento.getDouble("valorTransferencia"));
+	}
 }

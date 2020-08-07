@@ -1,6 +1,7 @@
 package br.com.caelum.contas.modelo;
 
 import br.com.caelum.contas.util.Data;
+import br.com.caelum.exception.SaldoInsuficienteException;
 
 public class Conta {
 	private int numero;
@@ -28,9 +29,9 @@ public class Conta {
 		this.titular = titular;
 	}
 
-	public void sacar(double quantia) throws Exception {
+	public void sacar(double quantia) {
 		if (quantia <= 0 || this.saldo < quantia) {
-			throw new Exception("Operacao indevida");
+			throw new SaldoInsuficienteException("Saldo insuficiente, tente um valor menor");
 		}
 
 		this.saldo -= quantia;
@@ -38,13 +39,15 @@ public class Conta {
 	}
 
 	public void depositar(double quantia) {
-		if (quantia > 0)
-			this.saldo += quantia;
+		if (quantia <= 0)
+			throw new IllegalArgumentException("Voce tentou depositar um valor negativo");
+
+		this.saldo += quantia;
 	}
 
-	public boolean tranferir(Conta conta, double quantia) throws Exception {
+	public boolean tranferir(Conta conta, double quantia) {
 		this.sacar(quantia);
-		this.depositar(quantia);
+		conta.depositar(quantia);
 		return true;
 	}
 
@@ -75,7 +78,7 @@ public class Conta {
 	@Override
 	public String toString() {
 
-		return this.titular ;
+		return this.titular;
 	}
 
 	public int getNumero() {
