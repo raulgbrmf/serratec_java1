@@ -1,5 +1,0 @@
-SELECT 
-valor_unit,
-qtd_item,
-(valor_unit * qtd_item) AS valor
-FROM produto, item, pedido_compra
