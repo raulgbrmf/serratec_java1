@@ -2,18 +2,19 @@ package br.com.caelum.contas.modelo;
 
 import br.com.caelum.util.Data;
 
-public class Conta {
+public abstract class Conta {
 
 	private String titular;
 	private static int totalContas;
 	private  int identificador ; // ---------------> Capitulo 5 Questão 5
 	private int numero;
 	private String agencia; // -------------> Capitulo 5 Questão 1
-	private double saldo;
+	protected double saldo;
+	protected String tipo;
 	Data data_abertura;
 	
-	Data dataMinhaConta = new Data(15, 3 , 2020);
-	Data dataSuaConta = new Data(21, 7, 2015);
+	//Data dataMinhaConta = new Data(15, 3 , 2020);
+	//Data dataSuaConta = new Data(21, 7, 2015);
 
 	// Criando os construtores
 	
@@ -85,6 +86,7 @@ public class Conta {
 		return totalContas;
 	}
 	
+	
 
 
 	// Criando os métodos
@@ -106,13 +108,11 @@ public class Conta {
 
 	}*/
 	
-	public boolean saca (double valor) {
-		if(this.saldo >= valor) {
-			this.saldo = this.saldo - valor;
-			return true;
-		} else {
-			return false;
-		}
+	public abstract String getTipo(); 
+	
+
+	public void saca (double valor) {
+		this.saldo = this.saldo-valor;
 	}
 
 	/*void transfere(Conta destino, int valor) {
@@ -120,20 +120,18 @@ public class Conta {
 		destino.saldo = destino.saldo + valor;
 	}*/
 	
-	public void deposita(double valor) {
-		this.saldo = this.saldo + valor;
-	}
-	
-	 boolean transfere(Conta destino, double valor) {
-		boolean retirou = this.saca(valor);
-		if(retirou == false) {
+	public boolean deposita(double valor) {
+		if(valor>0) {
+			this.saldo = this.saldo+valor;
+			return true;}
+		else {
 			return false;
 		}
-		
-		else {
-			destino.deposita(valor);
-			return true;
-		}
+	}
+	
+	 public void transfere(double valor, Conta destino) {
+		this.saca(valor);
+		destino.deposita(valor);
 		
 	}
 

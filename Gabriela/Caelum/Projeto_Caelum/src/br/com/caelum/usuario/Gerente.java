@@ -1,7 +1,7 @@
 package br.com.caelum.usuario;
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticavel {
 
-	private int senha;
+	protected int senha;
 	private int numeroDeFuncionariosGerenciados;
 
 	
@@ -9,10 +9,18 @@ public class Gerente extends Funcionario {
 		super (nome); //chamando o construtor da mae, que tem a mesma construcao do gerente 
 	}
 	
-	Gerente (){
+	public Gerente (){
 		
 	}
 	
+	public int getSenha() {
+		return senha;
+	}
+
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+
 	public double getBonificacao() {
 
 		return salario * 0.1; // Se o atributo salario estiver private, tenho q chamar um get, pq ele nao vai
@@ -21,5 +29,15 @@ public class Gerente extends Funcionario {
 									// atributo salario, entao ficaria this.salario = this.salario * 0.1
 
 		//Se eu quisesse que a bonificacao do gerente fosse 15%, eu poderia escrever aqui com o 0.15, e isso nao ia alterar o getBonificacao da minha classe mae (Funcionario) 
+	}
+
+	@Override
+	public boolean autentica(int senha) {
+		if(this.senha == senha) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }
