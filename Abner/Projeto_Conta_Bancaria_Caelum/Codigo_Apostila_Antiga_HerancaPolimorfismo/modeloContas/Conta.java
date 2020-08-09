@@ -6,21 +6,35 @@ import usuario.Cliente;
 public abstract class Conta {
 
 	protected int numero;
+	protected String agencia;
 	protected double limite;
 	protected double saldo;
-	protected Cliente titular = new Cliente();
+	protected String titular;
+	//protected Cliente titular = new Cliente();
 
 	public Conta() {
 
 	}
 
-	public Conta(Cliente titular) {
+	/*public Conta(Cliente titular) {
 		this.titular = titular;
-	}
+	}*/
 
-	public Conta(int numero, Cliente titular) {
+	/*public Conta(int numero, Cliente titular) {
 		this(titular);
 		this.numero = numero;
+	}*/
+	
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public void setAgencia(String ag) {
+		this.agencia = ag;
 	}
 
 	public double getSaldo() {
@@ -55,4 +69,9 @@ public abstract class Conta {
 	 */
 
 	public abstract void atualiza(double taxa);
+	
+	@Override
+	public String toString() {		
+		return " Titular: " + this.titular + " Numero: " + this.numero + " Agencia: " + this.agencia + " Saldo: " + this.saldo;
+	}
 }

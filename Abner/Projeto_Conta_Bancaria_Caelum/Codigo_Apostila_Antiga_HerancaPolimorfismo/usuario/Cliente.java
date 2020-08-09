@@ -4,6 +4,7 @@ import interfaces.Autenticavel;
 
 public class Cliente implements Autenticavel {
 	
+	private String nome;
 	private int senha = 000;
 	
 	public boolean autentica(int senha) {

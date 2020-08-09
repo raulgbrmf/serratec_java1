@@ -17,7 +17,12 @@ public class ContaCorrente extends Conta implements Tributavel {
 	}
 	
 	
-	/*public void deposita(double valor) {
+	public void deposita(double valor) {
 		this.saldo += valor - 0.10;
-	}*/
+	}	
+	
+	@Override
+	public String toString() {		
+		return "Tipo: Conta Corrente " + super.toString();
+	}
 }
