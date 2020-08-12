@@ -1,31 +1,29 @@
 package br.com.caelum.contas.modelo;
 
+import br.com.caelum.exceptions.SaldoInsuficienteException;
 import br.com.caelum.util.Data;
 
-public abstract class Conta {
+public class Conta {
 
 	private String titular;
 	private static int totalContas;
-	private  int identificador ; // ---------------> Capitulo 5 Questão 5
+	private int identificador;
 	private int numero;
-	private String agencia; // -------------> Capitulo 5 Questão 1
+	private int agencia;
 	protected double saldo;
 	protected String tipo;
 	Data data_abertura;
-	
-	//Data dataMinhaConta = new Data(15, 3 , 2020);
-	//Data dataSuaConta = new Data(21, 7, 2015);
 
 	// Criando os construtores
-	
-	public Conta(){
-		
+
+	public Conta() {
+
 		totalContas = totalContas + 1;
 		this.identificador = totalContas;
-		
+
 	}
-	
-	public Conta(int numero, String titular, String agencia, double saldo, Data data_abertura) {
+
+	public Conta(int numero, String titular, int agencia, double saldo, Data data_abertura) {
 
 		this.numero = numero;
 		this.titular = titular;
@@ -33,9 +31,6 @@ public abstract class Conta {
 		this.saldo = saldo;
 		this.data_abertura = data_abertura;
 	}
-
-	
-	
 
 	// Criando os getters e setters
 
@@ -55,84 +50,66 @@ public abstract class Conta {
 		this.numero = numero;
 	}
 
-	public String getAgencia() {
+	public int getAgencia() {
 		return agencia;
 	}
 
-	public void setAgencia(String agencia) {
-		this.agencia = agencia;
+	public void setAgencia(int i) {
+		this.agencia = i;
 	}
 
 	public double getSaldo() {
 		return saldo;
 	}
-	
-	
-	
+
 	public void setData_abertura(Data data_abertura) {
-		if(data_abertura.validaData()) {
-		this.data_abertura = data_abertura;
+		if (data_abertura.validaData()) {
+			this.data_abertura = data_abertura;
 		}
 	}
-
-
-
 
 	public int getIdentificador() {
 		return identificador;
 	}
-	
+
 	public int gettotalContas() {
 		return totalContas;
 	}
-	
-	
 
+	//public abstract String getTipo();
 
 	// Criando os métodos
 
-	/*void saca(int valor) {
+	@Override
+	public String toString() {
+		return "Conta [titular=" + titular + ", identificador=" + identificador + ", numero=" + numero + ", agencia="
+				+ agencia + ", saldo=" + saldo + ", tipo=" + tipo + ", data_abertura=" + data_abertura + "]";
+	}
 
-		this.saldo = this.saldo - valor;
+	public void saca(double valor) throws SaldoInsuficienteException {
+		if (valor < 0) {
+			throw new IllegalArgumentException("Você tentou sacar um valor negativo");
 
-	}*/
-	
-	
-	/*String saca(double valor) {
-		if (this.saldo >= valor) {
-			this.saldo = this.saldo - valor;  // COMO FAZ PRA RETORNAR UMA MENSAGEM DIZENDO QUE FOI OU NAO POSSIVEL REALIZAR O SAQUE (Se for boolean)???
-			 return "Vê sacoocu : " + valor;
+		}
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException(valor);
 		} else {
-			return "Saldo insuficiente para realizar saque com esse valor!";
-		}
-
-	}*/
-	
-	public abstract String getTipo(); 
-	
-
-	public void saca (double valor) {
-		this.saldo = this.saldo-valor;
-	}
-
-	/*void transfere(Conta destino, int valor) {
-		this.saldo = this.saldo - valor;          ----------------> Não consegui chamar o método transfere na minha main.
-		destino.saldo = destino.saldo + valor;
-	}*/
-	
-	public boolean deposita(double valor) {
-		if(valor>0) {
-			this.saldo = this.saldo+valor;
-			return true;}
-		else {
-			return false;
+			this.saldo = this.saldo - valor;
 		}
 	}
-	
-	 public void transfere(double valor, Conta destino) {
+
+	public void deposita(double valor) {
+		if (valor < 0) {
+			throw new IllegalArgumentException("Você tentou depositar um valor negativo");
+		} else {
+			this.saldo += valor;
+		}
+	}
+
+	public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
 		this.saca(valor);
 		destino.deposita(valor);
-		
+
 	}
 
 	double calculaRendimento() {
@@ -141,14 +118,14 @@ public abstract class Conta {
 
 	public String recuperaDadosParaImpressao(Data data) {
 		boolean validacao = data.validaData();
-		if (validacao == false) { //---------------------> perguntar se é pra deixar a msg de erro
-			
+		if (validacao == false) {
+
 			return "O número da conta é: " + this.numero + "\n" + "O titular da conta é: " + this.titular + "\n"
-					+ "A agência é: " + this.agencia + "\n" + "A data de abertura da conta é: Data inválida"
-					 + "\n" + "O saldo da conta é: " + this.saldo + "\n";
-			
+					+ "A agência é: " + this.agencia + "\n" + "A data de abertura da conta é: Data inválida" + "\n"
+					+ "O saldo da conta é: " + this.saldo + "\n";
+
 		}
-		
+
 		return "O número da conta é: " + this.numero + "\n" + "O titular da conta é: " + this.titular + "\n"
 				+ "A agência é: " + this.agencia + "\n" + "A data de abertura da conta é: "
 				+ this.data_abertura.imprimeData() + "\n" + "O saldo da conta é: " + this.saldo + "\n";

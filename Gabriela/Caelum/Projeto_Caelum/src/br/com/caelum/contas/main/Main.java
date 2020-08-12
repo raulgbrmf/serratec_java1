@@ -1,5 +1,7 @@
 package br.com.caelum.contas.main;
 import br.com.caelum.contas.modelo.Conta;
+import br.com.caelum.contas.modelo.ContaCorrente;
+import br.com.caelum.exceptions.SaldoInsuficienteException;
 import br.com.caelum.contas.PessoaFisica;
 import br.com.caelum.usuario.*;
 import br.com.caelum.util.Data;
@@ -17,13 +19,17 @@ public class Main {
 		//Conta minhaConta = new Conta(1, "Gabriela", "555", 2000, dataMinhaConta);
 		//Conta suaConta = new Conta(2, "João", "555", 1500, dataSuaConta);
 		//Conta contaTeste = new Conta();
-		//Conta contaTeste2 = new Conta();
+		ContaCorrente contaTeste2 = new ContaCorrente();
+		
+		try {
+			contaTeste2.saca(200);
+		} catch (SaldoInsuficienteException e) {
+			
+			System.out.println(e.getMessage());;
+		}
 		
 		
-		
-		
-
-		
+				
 	
 	}
 		}
