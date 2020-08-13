@@ -1,0 +1,6 @@
+nome;cpf;senha;idFuncionario
+Pedro;111;123;0
+Paulo;222;123;1
+Juan;333;123;2
+Maria;444;123;3
+Ana;555;123;0
