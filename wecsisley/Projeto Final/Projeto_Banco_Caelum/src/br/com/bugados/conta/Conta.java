@@ -1,23 +1,13 @@
 package br.com.bugados.conta;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.swing.JOptionPane;
 
-import br.com.bugados.util.RelatoriosBanco;
-
-public class Conta {
+public abstract class Conta {
 
 	protected String titular;
 	protected int numero;
 	protected int agencia;
-	protected String tipo;
+	protected int tipo;
 	protected int cpf;
 	protected double saldo;
 
@@ -25,41 +15,15 @@ public class Conta {
 
 	}
 
-	public Conta(int cpf, int numero, int agencia, double saldo) {
+	public Conta(int cpf, int numero, int agencia, double saldo, int tipo) {
 		this.cpf = cpf;
 		this.numero = numero;
 		this.agencia = agencia;
 		this.saldo = saldo;
+		this.tipo = tipo;
 	}
 
-	public static Map<Integer, Conta> lerConta() throws IOException, FileNotFoundException {
-		String linha;
-
-		try (BufferedReader csvReader = new BufferedReader(new FileReader("Conta.txt"))) {
-			linha = csvReader.readLine();
-
-			Map<Integer, Conta> mapConta = new HashMap<>();
-
-			while ((linha = csvReader.readLine()) != null) {
-
-				linha = linha.replace("\"", "");
-
-				String[] data = linha.split(";");
-
-				int cpf = Integer.parseInt(data[0]);
-				int numero = Integer.parseInt(data[1]);
-				int agencia = Integer.parseInt(data[2]);
-				double saldo = Integer.parseInt(data[3]);
-
-				Conta novaConta = new Conta(cpf, numero, agencia, saldo);
-				mapConta.put(cpf, novaConta);
-
-			}
-			return mapConta;
-		}
-	}
-
-	public void preencheConta() {
+		public void preencheConta() {
 
 		String entradaTitular = JOptionPane.showInputDialog("Informe o nome do títular: ");
 		String entradaNuemro = JOptionPane.showInputDialog("Informe o numero para a conta: ");
@@ -80,20 +44,24 @@ public class Conta {
 		this.saldo += valor;
 	}
 
-	public void saca(double valor) {
+	public boolean saca(double valor) {
 		if (this.saldo < valor) {
 			System.out.println("Saldo insuficiente!!!");
+			return false;
 		} else {
 			this.saldo -= valor;
+			return true;
 		}
 	}
 
-	public void transferePara(Conta destino, double valor) {
+	public boolean transferePara(Conta destino, double valor) {
 		if (this.saldo >= valor) {
 			destino.saldo = destino.saldo + valor;
 			this.saldo = this.saldo - valor;
+			return true;
 		} else {
 			System.out.println("Não há saldo suficiente para transferir esse valor!!!");
+			return false;
 		}
 	}
 
@@ -120,7 +88,7 @@ public class Conta {
 		return cpf;
 	}
 
-	public void setCpfTitular(int cpfTitular) {
+	public void setCpfTitular(int cpf) {
 		this.cpf = cpf;
 	}
 
@@ -148,11 +116,11 @@ public class Conta {
 		this.titular = titular;
 	}
 
-	public String getTipo() {
+	public int getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
 

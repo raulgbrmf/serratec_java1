@@ -4,13 +4,13 @@ import javax.swing.JOptionPane;
 
 public class InteracaoUsuario {
 
-	public static String lerString(String menssagem) {
-		return JOptionPane.showInputDialog(menssagem);
+	public static String lerString(String mensagem) {
+		return JOptionPane.showInputDialog(mensagem);
 	}
 
-	public static Integer lerInteiros(String menssagem) {
+	public static Integer lerInteiros(String mensagem) {
 		try {
-			String entrada = JOptionPane.showInputDialog(menssagem);
+			String entrada = JOptionPane.showInputDialog(mensagem);
 			return Integer.parseInt(entrada);
 		} catch (NumberFormatException e) {
 			System.out.println("Valor informado diferente do esperado(Inteiro)");
@@ -19,7 +19,14 @@ public class InteracaoUsuario {
 		}
 	}
 
-	public static String lerDoubles(String menssagem) {
-		return JOptionPane.showInputDialog(menssagem);
+	public static Double lerDoubles(String mensagem) {
+		try {
+			String entrada = JOptionPane.showInputDialog(mensagem);
+			return Double.parseDouble(entrada);
+		} catch (NumberFormatException e) {
+			System.out.println("Valor informado diferente do esperado(decimal)");
+			e.printStackTrace();
+			return null;
+		}
 	}
 }

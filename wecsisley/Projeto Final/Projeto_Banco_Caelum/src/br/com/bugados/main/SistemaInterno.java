@@ -1,13 +1,24 @@
 package br.com.bugados.main;
 
-import java.io.*;
+import static br.com.bugados.util.Constantes.CARGO_DIRETOR;
+import static br.com.bugados.util.Constantes.CARGO_GERENTE;
+import static br.com.bugados.util.Constantes.CARGO_PRESIDENTE;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Map;
 
+import javax.swing.JOptionPane;
+
 import br.com.bugados.conta.Conta;
+import br.com.bugados.conta.ContaCorrente;
+import br.com.bugados.conta.ContaPoupanca;
+import br.com.bugados.conta.MapaDasContas;
 import br.com.bugados.funcionario.Funcionario;
+import br.com.bugados.funcionario.MapaDeFuncionario;
 import br.com.bugados.usuario.Cliente;
-import static br.com.bugados.util.Constantes.*;
 import br.com.bugados.util.InteracaoUsuario;
+import br.com.bugados.util.MenuDeOpcoes;
 
 public class SistemaInterno {
 
@@ -18,13 +29,14 @@ public class SistemaInterno {
 	public static void main(String[] args) {
 
 		try {
-			mapFuncionario = Funcionario.lerFuncionarios();
+			mapFuncionario = MapaDeFuncionario.lerFuncionarios();
 			mapCliente = Cliente.lerCliente(mapFuncionario);
-			mapConta = Conta.lerConta();
+			mapConta = MapaDasContas.lerConta();
 		} catch (FileNotFoundException e) {
-			System.out.println("Deu tosse !");
+			System.out.println("Deu tosse !, arquivo não encontrado");
 			e.printStackTrace();
 		} catch (IOException e) {
+			System.out.println("deu ruim na entrada ou saida do arquivo");
 			e.printStackTrace();
 		} catch (Exception e) {
 			System.out.println("Deu ruim, não sei o que foi. se vira");
@@ -32,32 +44,34 @@ public class SistemaInterno {
 		}
 
 		int cpfLogin = InteracaoUsuario.lerInteiros("Informe um cpf (somente números) para login: ");
-		int senhaLogin = InteracaoUsuario.lerInteiros("Informe a senha (somente números) para login: ");
 
 		boolean clienteCadastrado = mapCliente.containsKey(cpfLogin);
 		if (clienteCadastrado) {
 			Cliente cliente = mapCliente.get(cpfLogin);
+			
+			int senhaLogin = InteracaoUsuario.lerInteiros("Informe a senha (somente números) para login: ");
 			if (senhaLogin == cliente.getSenha()) {
 				if (cliente.getFuncionario() != null) {
-					// Aqui ele é um funcionario
+					//Funcionario cliente = (Funcionario) mapConta.get(cpfLogin);
 					switch (cliente.getFuncionario().getCargo()) {
 					case CARGO_GERENTE:
-						// Aqui ele é um Gerente
+						MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
 						break;
 					case CARGO_DIRETOR:
-						// Aqui ele é um Direetor
+						MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
 						break;
 					case CARGO_PRESIDENTE:
-						// Aqui ele é um Presidente
+						MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
 						break;
 					}
 				} else {
-					// Aqui ele é só um cliente
+					MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
 				}
+			} else {
+				// Senha errado
 			}
 		} else {
-					//Cliente não cadastrado
+			System.out.println("Cliente não cadastrado !");
 		}
-
 	}
 }
