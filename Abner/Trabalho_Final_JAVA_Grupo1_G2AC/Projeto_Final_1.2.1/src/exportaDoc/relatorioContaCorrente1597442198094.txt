@@ -1,0 +1,23 @@
+-----------------------------------------
+|                                       |
+|             Banco G2AC	        |
+|                                       |
+| Agência: 5678				|
+| Titular: Bill Gates              	|
+| CPF: 765.321.890-65			|
+| Tipo de Conta: Conta Corrente         |
+|                                       |
+|-----------Tributos Cobrados-----------|
+|                                       |
+| Taxa Saque: 0,10			|
+| Total de Operações: 1                 |
+| Total Gasto: 0,10			|
+| Taxa Deposito: 0,10			|
+| Total de Operações: 1                 |
+| Total Gasto: 0,10			|
+| Taxa Transferencia: 0,20		|
+| Total de Operações: 1                 |
+| Total Gasto: 0,20			|
+| Tributo Seguro De Vida: 200,00          |
+| Total Gasto c/ Tributos: 200,40	        |
+-----------------------------------------
