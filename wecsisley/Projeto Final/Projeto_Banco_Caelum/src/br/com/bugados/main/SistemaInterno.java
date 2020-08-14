@@ -8,11 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 
-import javax.swing.JOptionPane;
-
 import br.com.bugados.conta.Conta;
-import br.com.bugados.conta.ContaCorrente;
-import br.com.bugados.conta.ContaPoupanca;
 import br.com.bugados.conta.MapaDasContas;
 import br.com.bugados.funcionario.Funcionario;
 import br.com.bugados.funcionario.MapaDeFuncionario;
@@ -48,30 +44,35 @@ public class SistemaInterno {
 		boolean clienteCadastrado = mapCliente.containsKey(cpfLogin);
 		if (clienteCadastrado) {
 			Cliente cliente = mapCliente.get(cpfLogin);
-			
+
 			int senhaLogin = InteracaoUsuario.lerInteiros("Informe a senha (somente números) para login: ");
 			if (senhaLogin == cliente.getSenha()) {
-				if (cliente.getFuncionario() != null) {
-					//Funcionario cliente = (Funcionario) mapConta.get(cpfLogin);
-					switch (cliente.getFuncionario().getCargo()) {
+				if (cliente.getCargo() != null) {
+					switch (cliente.getCargo()) {
 					case CARGO_GERENTE:
-						MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
+						MenuDeOpcoes.menuGerente(cpfLogin, mapConta, mapCliente, mapFuncionario);
 						break;
 					case CARGO_DIRETOR:
-						MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
+						MenuDeOpcoes.menuDiretor(cpfLogin, mapConta, mapCliente, mapFuncionario);
 						break;
 					case CARGO_PRESIDENTE:
-						MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
+						MenuDeOpcoes.menuPresidente(cpfLogin, mapConta, mapCliente, mapFuncionario);
 						break;
 					}
 				} else {
 					MenuDeOpcoes.menuCliente(cpfLogin, mapConta, mapCliente, mapFuncionario);
 				}
 			} else {
-				// Senha errado
+				System.out.println("Usuario ou senha incorretos, tente novamente");
 			}
-		} else {
-			System.out.println("Cliente não cadastrado !");
+
+		}else {
+			System.out.println("\n|--------------------------------|");
+			System.out.println("|                                |");
+			System.out.println("|          BugadosBank           |");
+			System.out.println("|                                |");
+			System.out.println("|--------------------------------|");
 		}
+
 	}
 }

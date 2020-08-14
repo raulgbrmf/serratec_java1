@@ -1,6 +1,6 @@
-cpf;numero;agencia;saldo;tipo
-111;1;11;0;1
-222;2;22;0;1
-333;3;33;0;2
-444;4;44;0;2
-555;5;55;0;1
+titular;cpf;numero;agencia;saldo;tipo
+Pedro;111;1;11;1000;1
+Paulo;222;2;11;500;2
+Juan;333;3;11;150;1
+Maria;444;4;22;200;2
+Ana;555;5;22;700;1

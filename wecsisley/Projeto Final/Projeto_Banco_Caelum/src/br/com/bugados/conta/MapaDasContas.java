@@ -30,18 +30,18 @@ public class MapaDasContas extends Conta {
 				linha = linha.replace("\"", "");
 
 				String[] data = linha.split(";");
-
-				int cpf = Integer.parseInt(data[0]);
-				int numero = Integer.parseInt(data[1]);
-				int agencia = Integer.parseInt(data[2]);
-				double saldo = Integer.parseInt(data[3]);
-				int tipoConta = Integer.parseInt(data[4]);
+				String titular = data[0];
+				int cpf = Integer.parseInt(data[1]);
+				int numero = Integer.parseInt(data[2]);
+				int agencia = Integer.parseInt(data[3]);
+				double saldo = Integer.parseInt(data[4]);
+				int tipo = Integer.parseInt(data[5]);
 				
-				if(tipoConta == 1) {
-					Conta novaConta = new ContaCorrente(cpf, numero, agencia, saldo, tipoConta);
+				if(tipo == 1) {
+					Conta novaConta = new ContaCorrente(titular, cpf, numero, agencia, saldo, tipo);
 					mapConta.put(cpf, novaConta);
 				}else {
-					Conta novaConta = new ContaPoupanca(cpf, numero, agencia, saldo, tipoConta);
+					Conta novaConta = new ContaPoupanca(titular, cpf, numero, agencia, saldo, tipo);
 					mapConta.put(cpf, novaConta);
 				}
 

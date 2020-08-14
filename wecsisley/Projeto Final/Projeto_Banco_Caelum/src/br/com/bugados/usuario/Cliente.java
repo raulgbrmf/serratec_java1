@@ -14,10 +14,10 @@ import br.com.bugados.funcionario.Presidente;
 
 public class Cliente {
 
-	private String nome;
-	private int cpf;
-	private int senha;
-	private Funcionario funcionario;
+	protected String nome;
+	protected int cpf;
+	protected int senha;
+	protected String cargo;
 
 	public Cliente() {
 	}
@@ -48,30 +48,24 @@ public class Cliente {
 				int cpf = Integer.parseInt(data[1]);
 				int senha = Integer.parseInt(data[2]);
 				int idFuncionario = Integer.parseInt(data[3]);
+				String cargo = data[3];
 				
 				if(idFuncionario == 0) {
 					Cliente novoCliente = new Cliente(nome, senha, cpf);
-					novoCliente.setFuncionario(mapFuncionario.get(idFuncionario));
 					mapCliente.put(cpf, novoCliente);
 				}else if(idFuncionario == 1) {
-					Gerente novoGerente = new Gerente();
+					Cliente novoGerente = new Gerente(nome, senha, cpf, cargo);
+					mapCliente.put(cpf, novoGerente);
 				}else if(idFuncionario == 2) {
-					Diretor novoDiretor = new Diretor();
+					Cliente novoDiretor = new Diretor(nome, senha, cpf, cargo);
+					mapCliente.put(cpf, novoDiretor);
 				}else if(idFuncionario ==3){
-					Presidente novoPresidente = new Presidente();
+					Cliente novoPresidente = new Presidente(nome, senha, cpf, cargo);
+					mapCliente.put(cpf, novoPresidente);
 				}
-
 			}
 			return mapCliente;
 		}
-	}
-
-	public Funcionario getFuncionario() {
-		return funcionario;
-	}
-
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
 	}
 
 	public String getNome() {
@@ -96,6 +90,14 @@ public class Cliente {
 
 	public void setCpf(int cpf) {
 		this.cpf = cpf;
+	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
 	}
 
 	@Override

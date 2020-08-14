@@ -1,6 +1,8 @@
 package br.com.bugados.conta;
 
-public class ContaCorrente extends Conta {
+import br.com.bugados.exceptions.DepositoIndevido;
+
+public class ContaCorrente extends Conta implements Comparable<Conta>{
 
 	protected int tipo;
 	protected double taxas;
@@ -9,7 +11,8 @@ public class ContaCorrente extends Conta {
 
 	}
 
-	public ContaCorrente(int cpf, int numero, int agencia, double saldo, int tipo) {
+	public ContaCorrente(String titular, int cpf, int numero, int agencia, double saldo, int tipo) {
+		this.titular = titular;
 		this.cpf = cpf;
 		this.numero = numero;
 		this.agencia = agencia;
@@ -40,8 +43,12 @@ public class ContaCorrente extends Conta {
 
 	@Override
 	public void deposita(double valor) {
+		if(valor >= 1) {
 		this.saldo += (valor - 0.10);
 		this.taxas = this.taxas + 0.10;
+		}else {
+			throw new DepositoIndevido("Valor de deposito invalido");
+		}
 	}
 
 	@Override
@@ -63,7 +70,16 @@ public class ContaCorrente extends Conta {
 	public int getTipo() {
 		return tipo;
 	}
-
+	@Override
+	public int compareTo(Conta outraConta) {
+		if (this.numero > outraConta.numero) {
+			return -1;
+		} else if (this.numero < outraConta.numero) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
 	@Override
 	public void consultaTipo() {
 		// TODO Auto-generated method stub

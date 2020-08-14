@@ -1,9 +1,14 @@
 package br.com.bugados.funcionario;
 
+public class Gerente extends Funcionario {
 
-public class Gerente extends Funcionario  {
-	
-	protected String agencia;
-	
-	
+	protected int agencia;
+
+	public Gerente(String nome, int senha, int cpf, String cargo) {
+		this.nome = nome;
+		this.senha = senha;
+		this.cpf = cpf;
+		this.cargo = cargo;
+	}
+
 }

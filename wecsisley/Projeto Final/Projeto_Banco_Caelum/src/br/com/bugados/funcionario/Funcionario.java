@@ -1,13 +1,16 @@
 package br.com.bugados.funcionario;
 
-public abstract class Funcionario {
+import br.com.bugados.usuario.Cliente;
 
-	protected String cargo;
+public abstract class Funcionario extends Cliente{
 
 	public Funcionario() {
 	}
 
-	public Funcionario(String cargo) {
+	public Funcionario(String nome, int senha, int cpf, String cargo) {
+		this.nome = nome;
+		this.senha = senha;
+		this.cpf = cpf;
 		this.cargo = cargo;
 	}
 
@@ -18,7 +21,7 @@ public abstract class Funcionario {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Funcionario [cargo=" + cargo + "]";
