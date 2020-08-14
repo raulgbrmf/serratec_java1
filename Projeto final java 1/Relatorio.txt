@@ -1,0 +1,24 @@
+Conta Poupança - Nº da conta: 9578512 - Saldo: 11950.0
+Conta Poupança - Nº da conta: 3269875 - Saldo: 50.0
+Conta Corrente - Nº da conta: 4532179 - Saldo: 0.0
+Tributação Conta Corrente: 0.0
+Conta Corrente - Nº da conta: 6532147 - Saldo: 0.0
+Tributação Conta Corrente: 0.0
+Conta Corrente - Nº da conta: 3574684 - Saldo: 939.5999999999999
+Tributação Conta Corrente: 0.4
+Conta Poupança - Nº da conta: 4562318 - Saldo: 0.0
+Conta Corrente - Nº da conta: 6532147 - Saldo: 0.0
+Tributação Conta Corrente: 0.0
+Conta Corrente - Nº da conta: 6532147 - Saldo: 0.0
+Tributação Conta Corrente: 0.0
+Conta Corrente - Nº da conta: 7896584 - Saldo: 0.0
+Tributação Conta Corrente: 0.0
+Conta Poupança - Nº da conta: 7898652 - Saldo: 0.0
+Conta Poupança - Nº da conta: 8547621 - Saldo: 0.0
+Conta Poupança - Nº da conta: 3215656 - Saldo: 0.0
+Conta Corrente - Nº da conta: 4523179 - Saldo: 0.0
+Tributação Conta Corrente: 0.0
+Conta Corrente - Nº da conta: 7896584 - Saldo: 688.8999999999999
+Tributação Conta Corrente: 0.0
+Conta Poupança - Nº da conta: 9578512 - Saldo: 300.0
+Conta Poupança - Nº da conta: 7896584 - Saldo: 49000.0

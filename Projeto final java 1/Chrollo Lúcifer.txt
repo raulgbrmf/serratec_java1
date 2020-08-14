@@ -1,0 +1,7 @@
+Titular: Chrollo Lúcifer Cpf: 753 Agência: 11 Nº da conta: 3574684 Saldo: 939.5999999999999
+
+Valor cobrado saque (taxa): 0.1 quantidade de saques: 1 Valor total (taxa): 0.1
+
+Valor cobrado deposito (taxa): 0.1 quantidade de depósitos: 1 Valor total (taxa): 0.1
+
+Valor cobrado transferência (taxa): 0.2 quantidade de transferências: 1 Valor total (taxa): 0.2

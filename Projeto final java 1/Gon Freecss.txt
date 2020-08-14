@@ -1,0 +1,7 @@
+Titular: Gon Freecss Cpf: 123 Agência: 11 Nº da conta: 9578512 Saldo: 11970.0
+
+quantidade de saques: 2
+
+quantidade de depósitos: 1
+
+quantidade de transferências: 1

@@ -1,0 +1,7 @@
+Titular: Isaac Netero Cpf: 147 Agência: 11 Nº da conta: 6532147 Saldo: 99.9
+
+Valor cobrado saque (taxa): 0.1 quantidade de saques: 0 Valor total (taxa): 0.0
+
+Valor cobrado deposito (taxa): 0.1 quantidade de depósitos: 1 Valor total (taxa): 0.1
+
+Valor cobrado transferência (taxa): 0.2 quantidade de transferências: 0 Valor total (taxa): 0.0
