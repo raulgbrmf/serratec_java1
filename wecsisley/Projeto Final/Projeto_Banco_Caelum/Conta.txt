@@ -1,6 +1,6 @@
 titular;cpf;numero;agencia;saldo;tipo
-Pedro;111;1;11;1000;1
-Paulo;222;2;11;500;2
-Juan;333;3;11;150;1
-Maria;444;4;22;200;2
-Ana;555;5;22;700;1
+Fabiene;111;1;11;1029.1000000000004;1
+Mariana;222;2;11;520.0;2
+Wecsisley;333;3;11;139.8;1
+Thayna;444;4;22;220.0;2
+Cristina;555;5;22;700;2

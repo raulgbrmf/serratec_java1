@@ -43,7 +43,7 @@ public class ContaCorrente extends Conta implements Comparable<Conta>{
 
 	@Override
 	public void deposita(double valor) {
-		if(valor >= 1) {
+		if(valor > 0.1) {
 		this.saldo += (valor - 0.10);
 		this.taxas = this.taxas + 0.10;
 		}else {
@@ -83,5 +83,16 @@ public class ContaCorrente extends Conta implements Comparable<Conta>{
 	@Override
 	public void consultaTipo() {
 		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public double seguroDeVida(double valor) {
+		if(this.saldo >= valor * 0.2) {
+			double valorApolice = valor * 0.2;
+			this.saldo = this.saldo - valorApolice;
+		return valorApolice;
+		}else {
+			return 0;
+		}
 	}
 }

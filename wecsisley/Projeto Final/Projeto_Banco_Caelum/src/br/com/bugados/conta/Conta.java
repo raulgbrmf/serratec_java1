@@ -3,8 +3,9 @@ package br.com.bugados.conta;
 import javax.swing.JOptionPane;
 
 import br.com.bugados.exceptions.DepositoIndevido;
+import br.com.bugados.impostos.SeguroDeVida;
 
-public abstract class Conta {
+public abstract class Conta implements SeguroDeVida{
 
 	protected String titular;
 	protected int numero;
@@ -43,7 +44,7 @@ public abstract class Conta {
 	}
 
 	public void deposita(double valor) {
-		if(valor >= 1) {
+		if(valor > 0.1) {
 		this.saldo += valor ;
 		}else {
 			throw new DepositoIndevido("Valor de deposito invalido");

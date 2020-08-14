@@ -58,4 +58,15 @@ public class ContaPoupanca extends Conta implements Comparable<Conta> {
 			return 0;
 		}
 	}
+
+	@Override
+	public double seguroDeVida(double valor) {
+		if(this.saldo >= valor * 0.2) {
+			double valorApolice = valor * 0.2;
+			this.saldo = this.saldo - valorApolice;
+		return valorApolice;
+		}else {
+			return 0;
+		}
+	}
 }

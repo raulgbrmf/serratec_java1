@@ -40,4 +40,9 @@ public class GeradorDeContas extends Conta {
 	@Override
 	public void consultaTipo() {
 	}
+
+	@Override
+	public double seguroDeVida(double valor) {
+		return 0;
+	}
 }
