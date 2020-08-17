@@ -1,0 +1,9 @@
+--------------------------------+
+O valor transferido é: 200.0 da Conta [tipo=Conta Corrente, saldo=649.5999999999999, agencia=1, cpfTitular=99999999999] para a conta Conta [tipo=Conta Corrente, saldo=1000.0, agencia=1, cpfTitular=88888888888]--------------------------------+
+O valor transferido é: 200.0 da Conta [tipo=Conta Corrente, saldo=699.8, agencia=1, cpfTitular=99999999999] para a conta null--------------------------------+
+O valor transferido é: 100.0 da Conta [tipo=Conta Corrente, saldo=599.5999999999999, agencia=1, cpfTitular=99999999999] para a conta Conta [tipo=Conta Corrente, saldo=900.0, agencia=1, cpfTitular=88888888888]--------------------------------+
+O valor transferido é: 1000.0 da Conta [tipo=Conta Corrente, saldo=5999.7, agencia=1, cpfTitular=32567418954] para a conta Conta [tipo=Conta Corrente, saldo=1800.0, agencia=1, cpfTitular=88888888888]--------------------------------+
+O valor transferido é: 1000.0 da Conta [tipo=Conta Corrente, saldo=6999.8, agencia=1, cpfTitular=32567418954] para a conta Conta [tipo=Conta Corrente, saldo=1800.0, agencia=1, cpfTitular=88888888888]--------------------------------+
+O valor transferido é: 200.0 da Conta [tipo=Conta Corrente, saldo=699.8, agencia=1, cpfTitular=99999999999] para a conta Conta [tipo=Conta Corrente, saldo=1000.0, agencia=1, cpfTitular=88888888888]--------------------------------+
+O valor transferido é: 9000.0 da Conta [tipo=Conta Corrente, saldo=699.8, agencia=1, cpfTitular=99999999999] para a conta Conta [tipo=Conta Corrente, saldo=1000.0, agencia=1, cpfTitular=88888888888]--------------------------------+
+O valor transferido é: 1000.0 da Conta [tipo=Conta Corrente, saldo=5999.7, agencia=1, cpfTitular=32567418954] para a conta Conta [tipo=Conta Corrente, saldo=1900.0, agencia=1, cpfTitular=99999999999]

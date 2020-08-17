@@ -1,0 +1,6 @@
+-------------------------------+
+O valor depositado é: 200.0 na Conta [tipo=Conta Corrente, saldo=1199.8, agencia=1, cpfTitular=99999999999]-------------------------------+
+O valor depositado é: 1000.0 na Conta [tipo=Conta Corrente, saldo=8999.9, agencia=1, cpfTitular=32567418954]-------------------------------+
+O valor depositado é: 100.0 na Conta [tipo=Conta Corrente, saldo=999.9, agencia=1, cpfTitular=99999999999]-------------------------------+
+O valor depositado é: 100.0 na Conta [tipo=Conta Corrente, saldo=2099.9, agencia=1, cpfTitular=89898989898]-------------------------------+
+O valor depositado é: 1000.0 na Conta [tipo=Conta Corrente, saldo=7899.799999999999, agencia=1, cpfTitular=8547632158]

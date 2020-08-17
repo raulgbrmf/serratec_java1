@@ -1,0 +1,18 @@
+----------------------------+
+O valor sacado é: 200.0 na Conta [tipo=Conta Corrente, saldo=599.8, agencia=1, cpfTitular=99999999999]----------------------------+
+O valor sacado é: 100.0 na Conta [tipo=Conta Corrente, saldo=799.9, agencia=1, cpfTitular=99999999999]----------------------------+
+O valor sacado é: 200.0 na Conta [tipo=Conta Corrente, saldo=599.8, agencia=1, cpfTitular=99999999999]----------------------------+
+O valor sacado é: 100.0 na Conta [tipo=Conta Corrente, saldo=799.9, agencia=1, cpfTitular=99999999999]%n----------------------------+
+O valor sacado é: 200.0 na Conta [tipo=Conta Corrente, saldo=599.8, agencia=1, cpfTitular=99999999999]%n----------------------------+
+O valor sacado é: 100.0 na Conta [tipo=Conta Corrente, saldo=799.9, agencia=1, cpfTitular=99999999999]
+----------------------------+
+O valor sacado é: 300.0 na Conta [tipo=Conta Corrente, saldo=499.79999999999995, agencia=1, cpfTitular=99999999999]
+----------------------------+
+O valor sacado é: 800.0 na Conta [tipo=Conta Corrente, saldo=99.89999999999998, agencia=1, cpfTitular=99999999999]----------------------------+
+O valor sacado é: 100.0 na Conta [tipo=Conta Corrente, saldo=1899.9, agencia=1, cpfTitular=89898989898]----------------------------+
+O valor sacado é: 1000.0 na Conta [tipo=Conta Corrente, saldo=6999.9, agencia=1, cpfTitular=32567418954]----------------------------+
+O valor sacado é: 100.0 na Conta [tipo=Conta Corrente, saldo=799.9, agencia=1, cpfTitular=99999999999]----------------------------+
+O valor sacado é: 100.0 na Conta [tipo=Conta Corrente, saldo=599.6999999999999, agencia=1, cpfTitular=99999999999]----------------------------+
+O valor sacado é: 21.0 na Conta [tipo=Conta Poupança, saldo=100.0, agencia=2, cpfTitular=11111111111]----------------------------+
+O valor sacado é: 100.0 na Conta [tipo=Conta Corrente, saldo=6899.9, agencia=1, cpfTitular=8547632158]----------------------------+
+O valor sacado é: 1000.0 na Conta [tipo=Conta Corrente, saldo=6999.9, agencia=1, cpfTitular=32567418954]
