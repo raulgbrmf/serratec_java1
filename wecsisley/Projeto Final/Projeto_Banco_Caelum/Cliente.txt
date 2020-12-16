@@ -1,0 +1,6 @@
+nome;cpf;senha;idFuncionario
+Fabiene;111;123;0
+Mariana;222;123;1
+Wecsisley;333;123;2
+Thayna;444;123;3
+Cristina;555;123;0

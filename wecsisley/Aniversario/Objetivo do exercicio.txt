@@ -1,0 +1,17 @@
+Exercícios Aniversário: 
+
+pt1 - Crie um uma classe Pessoa que recebe nome e sobre nome e na clasase main 
+recebe uma data e diga se na data informada foi aniversário da pessoa.
+
+pt2 - Se foi aniversario, informe quantos anos a pessoa fez naquela data
+
+pt3 - não deixe o programa receber anos antes da pessoa ter nascaido nem anos além do atual
+
+pt4 - não deixe o programa receber dias inválidos nem meses inválidos
+
+pt5 - não deixe o programa receber dias inválidos dentro de determinado mês (exemplo: mês 04 - Dia 31)
+
+pt6 - caso seja informado um valor inválido o programa deve dizer ao usuário qual dado foi incrementado de forma errada
+
+pt7 - o programa deve ser capaz de identificar se o ano informado é Bissexto, e deve informar ao usuário caso ele tente acessar 
+      um dia errado no mês 02
